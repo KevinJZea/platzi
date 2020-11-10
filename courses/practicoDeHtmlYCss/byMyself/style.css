@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+
+/************ HEADER ***********/
+
+header {
+    height: 5rem;
+}
+
+header nav {
+    margin-top: 1rem;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 6rem 4rem 6rem;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;    
+}
+
+a:nth-of-type(1) {
+    justify-self: end;
+}
+
+a:nth-of-type(2) {
+    justify-self: end;
+}
+
+a:nth-of-type(4) {
+    justify-self: start;
+}
+
+#profile-pic {
+    border-radius: 5rem;
+    width: 3.1rem;
+}
+
+/************ END HEADER ***********/
+
+/************ MAIN ***********/
+
+main {
+    height: 80vh;
+}
+
+.main-container {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: minmax(400, auto);
+    grid-template-areas: "logo"
+                         "searcher"
+                         "buttons"
+                         "text";
+    justify-items: center;
+    /* align-items: center; */
+    height: 40vh;
+    align-content: center;
+    gap: 2.5rem;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+#logo {
+    width: 27.5rem;
+}
+
+.searcher {
+    grid-area: searcher;
+}
+
+#searcher {
+    width: 48rem;
+    padding: 1.5rem 2rem;
+    border: 0.1rem;
+    border-color: rgba(199, 199, 199, 0.794);
+    border-radius: 3rem;
+    border-style: solid;
+}
+
+.buttons {
+    grid-area: buttons;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    color: rgb(80, 80, 80);
+    font-size: 1.4rem;
+}
+
+.text {
+    grid-area: text;
+    font-size: 1.35rem;
+}
+
+.link {
+    text-decoration: none;
+}
+
+
+/************ END MAIN ***********/
+
+/************ FOOTER ***********/
+
+.footer-container {
+    height: 4.95vh;
+    padding: 0 1rem;
+    background-color: #f3f3f3;
+    display: grid;
+    grid-template-columns: 50rem 1fr 32rem;
+    grid-template-areas: "left-side . right-side";
+    align-items: center;
+}
+
+.left-side {
+    grid-area: left-side;
+}
+
+.left-side nav {
+    display: grid;
+    grid-template-columns: 9rem 9rem 12rem 20rem;
+    justify-items: center;
+}
+
+.right-side {
+    grid-area: right-side;
+}
+
+.right-side nav {
+    display: grid;
+    grid-template-columns: 10rem 10rem 11rem;
+    justify-items: center;
+    gap: 0.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #6c738e;
+    font-size: 1.4rem;
+}
+
+/************ END FOOTER ***********/
