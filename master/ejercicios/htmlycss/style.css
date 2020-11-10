@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #7a55f1;
+    --background-color: #f0f6fa;
+    --text-color: #979ab2;
+    --text-size: 1.8rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+}
+
+p {
+    font-weight: bold;
+}
+
+/*---------------- HEADER ---------------*/
+
+header {
+    margin-top: 2rem;
+    height: 8vh;
+    max-width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.head {
+    display: inline-block;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.button-menu {
+    display: inline-block;
+    margin: 1.5rem;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-log-sign {
+    display: inline-block;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logo {
+    width: 20vw;
+    margin-top: 1rem;
+}
+
+#menu {
+    min-width: 52.5vw;
+    width: auto;
+    text-align: center;
+}
+
+#log-sign {
+    min-width: 20vw;
+    width: auto;
+    text-align: right;
+    align-self: flex-end;
+}
+
+#login {
+    color: var(--primary-color);
+}
+
+#signup {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+/*---------------- HEADER ---------------*/
+
+
+/*---------------- MAIN ---------------*/
+
+#first-part-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    max-width: 1200px;
+}
+
+.mains {
+    display: inline-block;
+    position: relative;
+}
+
+#main-content {
+    width: 60%;
+    margin-left: 4rem;
+    margin-right: 2rem;
+}
+
+#right-img {
+    max-width: 30%;
+    max-height: 30%;
+}
+
+#main-title {
+    font-size: 7rem;
+    margin-bottom: 3rem;
+}
+
+#main-description {
+    color: var(--text-color);
+    font-size: var(--text-size);
+    font-weight: normal;
+    margin-bottom: 4rem;
+}
+
+#button-free-account {
+    background-color: var(--primary-color);
+    display: inline-block;
+    border: 0.1rem solid transparent;
+    border-radius: 4rem;
+    padding: 2rem 4rem;
+    border-top-right-radius: 0.1rem;
+    margin-right: 2rem;
+    box-shadow: 1rem 1rem 0.5rem rgba(122, 85, 241, 0.4);
+}
+
+#free-account {
+    text-decoration: none;
+    color: white;
+    font-size: var(--text-size);
+}
+
+#beside-free-account {
+    font-size: var(--text-size);
+    color: var(--text-color);
+}
+
+#a-beside-free-account {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 0.2rem;
+}
+
+#shopify-imgs {
+    height: 4rem;
+    margin-top: 2rem;
+}
+
+#shopify {
+    margin-right: 2rem;
+}
+
+#stars-container {
+    margin-top: 5rem;
+}
+
+#tasks-container {
+    margin-top: 1.5rem;
+    width: 23rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.tasks-text {
+    color: black;
+    font-weight: bold;
+}
+
+/*---------------- MAIN ---------------*/

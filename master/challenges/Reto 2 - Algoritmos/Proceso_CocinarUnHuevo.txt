@@ -1,0 +1,9 @@
+Proceso CocinarUnHuevo
+    Definir ingredientes_existentes,ingredientes,estufa,producto,coccion
+    Obtener ingredientes
+    Encender estufa
+    Cocinar ingredientes
+    Evaluar coccion
+    Apagar estufa
+    Obtener producto
+FinProceso

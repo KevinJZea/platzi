@@ -1,0 +1,8 @@
+Proceso PedirPizza
+    Definir medio_comunicacion,ingredientes,ingredientes_existentes,producto
+    Activar medio_comunicacion
+    Conocer ingredientes_existentes
+    Solicitar ingredientes and producto
+    Esperar producto
+    Obtener producto
+FinProceso

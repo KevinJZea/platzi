@@ -1,0 +1,34 @@
+Proceso CajeroAutomatico
+    Definir hibernacion,anuncios,hay_tarjeta,sin_tarjeta
+    si hibernacion == True
+        Mostrar anuncios
+    de lo contrario
+        si hay_tarjeta == True
+            Definir tarjeta,identidad_usuario,confirmacion_identidad_usuario,pin,pin_ingresado,menu,operacion
+            Solicitar tarjeta
+            Leer tarjeta
+            Preguntar identidad_usuario
+                si confirmacion_identidad_usuario == True
+                    Solicitar pin
+                    si pin_ingresado == pin
+                        Mostrar menu
+                        Leer operacion
+                        Ejecutar operacion
+                    de lo contrario
+                        Mostrar 'PIN INCORRECTO. INTÉNTELO DE NUEVO'
+                de lo contrario
+                    FinProceso
+        de lo contrario
+            Activar sin_tarjeta
+            Definir clave_retiro,clave_retiro_ingresada,codigo_seguridad,codigo_seguridad_ingresado
+            Solicitar clave_retiro
+            si clave_retiro_ingresada == clave_retiro
+                Solicitar codigo_seguridad
+                si codigo_seguridad_ingresado == codigo_seguridad
+                    Definir monto_retiro
+                    Retirar monto_retiro
+                de lo contrario
+                    Mostrar 'CÓDIGO DE SEGURIDAD INCORRECTO. INTÉNTELO DE NUEVO'
+            de lo contrario
+                Mostrar 'CLAVE DE RETIRO INCORRECTA. INTÉNTELO DE NUEVO'
+FinProceso

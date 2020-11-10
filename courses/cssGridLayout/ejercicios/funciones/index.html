@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            /* grid-template-columns: 20% 200px 20%;
+            grid-template-rows: 300px 300px; */
+            /* grid-template: 300px 100px 100px / 1fr 1fr 1fr ; */
+            grid-template: 300px 100px 100px / repeat(4, minmax(50px, 1fr)) ;
+
+            /* column-gap: 30px;
+            row-gap: 30px; */
+            /* gap: filas columnas; */
+            gap: 1rem 30px;
+        }
+
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+            /* margin-bottom: 10px;
+            margin-right: 10px; */
+        }
+
+        .item:nth-of-type(4) {
+            color: white;
+            background: blue;
+            overflow: auto;
+            /* display: subgrid; */
+            /* display: inline-grid; */
+            display: grid;
+            grid-template: 300px 100px 100px / 50% 200px 20% ;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <div class="item">subitem #1</div>
+            <div class="item">subitem #2</div>
+            <div class="item">subitem #3</div>
+            <div class="item">subitem #4</div>
+            <div class="item">subitem #5</div>
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+</body>
+</html>
