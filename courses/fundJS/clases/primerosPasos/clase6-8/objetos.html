@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 6 - Objetos</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevin',
+            apellido: 'Zea',
+            edad: 21
+        };
+
+        var bro = {
+            nombre: 'Bro',
+            apellido: 'Zea',
+            edad: 17
+        };
+
+        // function imprimirNombreEnMayusculas(persona) {
+        //     var nombre = persona.nombre.toUpperCase();
+        //     console.log(nombre);
+        // }
+
+        function imprimirNombreEnMayusculas({ nombre }) {
+            var nombre = nombre.toUpperCase();
+            console.log(nombre);
+        }
+
+        imprimirNombreEnMayusculas(kevs);
+        imprimirNombreEnMayusculas(bro);
+        imprimirNombreEnMayusculas( { nombre: 'Pepito' } );
+    </script>
+</body>
+</html>

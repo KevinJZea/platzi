@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 25 - Clases</title>
+</head>
+<body>
+    <script>
+        class Persona {
+            constructor(nombre, apellido, altura) {
+                this.name = nombre;
+                this.lastName = apellido;
+                this.height = altura;
+            }
+
+            saludar() {
+                console.log(`Hola. Me llamo ${this.name} ${this.lastName}`);
+            }
+
+            soyAlto() {
+                var soyAlto = this.height > 1.8 ? 'es alto' : 'no es alto';
+                console.log(`${this.name} ${soyAlto}.`);
+            }
+        }
+
+        class Desarrollador extends Persona {
+            constructor(nombre, apellido, altura) {
+                super(nombre, apellido, altura)
+            }
+
+            saludar() {
+                console.log(`Hola. Me llamo ${this.name} y soy desarrollador.`);
+            }
+        }
+
+        var kevs = new Desarrollador('Kevs', 'Zea', 1.7);
+        kevs.saludar();
+        kevs.soyAlto();
+        var bro = new Persona('Bro', 'Zea', 1.7);
+        bro.saludar();
+        bro.soyAlto();
+        var granKhali = new Desarrollador('Khali', 'Great', 2.16);
+        granKhali.saludar();
+        granKhali.soyAlto();
+
+
+
+    </script>
+</body>
+</html>

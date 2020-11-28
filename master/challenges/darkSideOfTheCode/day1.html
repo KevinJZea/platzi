@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Exercise</title>
+  <style>
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Helvetica;
+}
+
+main {
+  background-color: lightblue;
+  height: 100vh;
+}
+
+.MainContainer {
+  width: 80%;
+  min-height: 500px;
+  max-width: 1000px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+  grid-template-areas: "chat1" "chat2" "chat3";
+  gap: 10px;
+}
+
+.Chat1 {
+  grid-area: chat1;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: lightsalmon;
+  display: grid;
+  grid-template: 1fr / 1fr 3fr 30px;
+  justify-items: center;
+}
+
+.Chat2 {
+  grid-area: chat2;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: lightsalmon;
+  display: grid;
+  grid-template: 1fr / 1fr 3fr 30px;
+  justify-items: center;
+}
+
+.Chat3 {
+  grid-area: chat3;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: lightsalmon;
+  display: grid;
+  grid-template: 1fr / 1fr 3fr 30px;
+  justify-items: center;
+}
+
+.MainContainer img {
+  border-radius: 10px;
+  width: 80%;
+  align-self: center;
+}
+
+.DataContainer {
+  align-self: start;
+}
+
+.Name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Profession {
+  font-size: 18px;
+  font-weight: light;
+}
+
+.HourContainer {
+  align-self: center;
+}
+
+.Hour {
+  font-size: 18px;
+  font-weight: light;
+}
+  </style>
+
+</head>
+<body>
+    <main>
+        <section class="MainContainer">
+            <section class="Chat1">
+                <section class="ImageContainer">
+                    <img src="" alt="User Profile Pic" />
+                </section>
+                <section class="DataContainer">
+                    <h3 class="Name">Theseus Radoslaw</h3>
+                    <p class="Profession">UX Designer</p>
+                </section>
+                <section class="HourContainer">
+                    <p class="Hour">06:31</p>
+                </section>
+            </section>
+            <section class="Chat2">
+                <section class="ImageContainer">
+                    <img src="" alt="User Profile Pic" />
+                </section>
+                <section class="DataContainer">
+                    <h3 class="Name">Pan Shamil</h3>
+                    <p class="Profession">Photographer</p>
+                </section>
+                <section class="HourContainer">
+                    <p class="Hour">02:46</p>
+                </section>
+            </section>
+            <section class="Chat3">
+                <section class="ImageContainer">
+                    <img src="" alt="User Profile Pic" />
+                </section>
+                <section class="DataContainer">
+                    <h3 class="Name">Maynerd Yoram</h3>
+                    <p class="Profession">Product Manager</p>
+                </section>
+                <section class="HourContainer">
+                    <p class="Hour">Yesterday</p>
+                </section>
+            </section>
+        </section>
+  </main>
+ </body>
+</html>

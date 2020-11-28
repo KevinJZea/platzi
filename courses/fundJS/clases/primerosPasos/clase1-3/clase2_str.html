@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 - String</title>
+</head>
+<body>
+    <script>
+        var nombre = 'Kevin', apellido = 'Zea', edad = 21;
+
+        var nombreEnMayusculas = nombre.toUpperCase();
+        var apellidoEnMinusculas = apellido.toLowerCase();
+        var primeraLetraDelNombre = nombre.charAt(0);
+        var cantidadDeLetrasDelNombre = nombre.length;
+
+        var nombreCompleto = `${nombre} ${apellido}`;
+
+        var str = nombre.substr(1, 2);
+
+        var yourName = prompt("Write your name: ");
+
+        var ultimoCaracter = alert(`El último carácter de tu nombre es ${yourName.charAt(yourName.length - 1)}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 15 - Do-While</title>
+</head>
+<body>
+    <script>
+        var contador = 0;
+
+        const llueve = () => Math.random() < 0.25;
+
+        do {
+            contador++;
+        } while (!llueve());
+
+        if (contador === 1) {
+            console.log(`Fui a ver si llovía ${contador} vez.`);
+        } else {
+            console.log(`Fui a ver si llovía ${contador} veces.`);
+        }
+
+
+        // Alternativa 1 por @marisolCervantes
+        // const frecuencia = cantidad => cantidad > 1 ? `${cantidad} veces` : `${cantidad} vez`
+        // console.log(`Fui a ver si llovia ${ frecuencia(contador) }`)
+
+        // Alternativa 2 por @Patricio_Recio_Contreras
+        // var frecuencia = contador===1 ? "vez":"veces";
+        // console.log(`Fui a ver si llovía ${contador}${frecuencia}`);
+    </script>
+</body>
+</html>

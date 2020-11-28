@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 8 - Parámetros como Referencia o Valor</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevin',
+            apellido: 'Zea',
+            edad: 21
+        };
+
+        var bro = {
+            nombre: 'Bro',
+            apellido: 'Zea',
+            edad: 17
+        };
+
+        function imprimirNombreEnMayusculas(persona) {
+            var { apellido } = persona;
+            console.log(apellido.toUpperCase());
+        }
+
+        // function imprimirNombreEnMayusculas({ nombre }) {
+        //     console.log(nombre.toUpperCase());
+        // }
+
+        imprimirNombreEnMayusculas(kevs);
+        imprimirNombreEnMayusculas(bro);
+        imprimirNombreEnMayusculas( { nombre: 'Pepito', apellido: 'Pérez' } );
+
+        function imprimirNombreYEdad(persona) {
+            var { nombre, edad } = persona;
+            console.log(`¡Hola! Me llamo ${nombre} y tengo ${edad} años de edad.`);
+        }
+
+        imprimirNombreYEdad(kevs);
+        imprimirNombreYEdad(bro);
+
+
+        // function cumpleanos(persona) {
+        //     persona.edad += 1;
+        // }
+
+        function cumpleanos(persona) {
+            return {
+                ...persona,
+                edad: persona.edad+1
+            };
+        }
+
+    </script>
+</body>
+</html>

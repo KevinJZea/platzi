@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 11 - Funciones que Retornan Valores</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            edad: 21,
+            ingeniero: false,
+            estudiante: true,
+            cantante: false,
+            dj: false,
+            guitarrista: false,
+            drone: false,
+            cocinero: false
+        };
+
+        var bro = {
+            nombre: 'Bro',
+            edad: 17
+        };
+
+        var juan = {
+            nombre: 'Juan',
+            edad: 13
+        };
+
+        function imprimirProfesiones(persona) {
+
+            console.log(`${persona.nombre} es: `);
+            if (persona.estudiante) {
+                console.log('Estudiante');
+            }
+            if (persona.cocinero) {
+                console.log('Cocinero');
+            }
+            if (persona.dj) {
+                console.log('DJ');
+            }
+            if (persona.cantante) {
+                console.log('Cantante');
+            }
+            if (persona.guitarrista) {
+                console.log('Guitarrista');
+            }
+            if (persona.drone) {
+                console.log('Piloto de drone');
+            }
+        }
+
+
+        imprimirProfesiones(kevs);
+
+        const MAYORIA_DE_EDAD = 18;
+
+        function esMayorDeEdad(persona) {
+            return persona.edad >= MAYORIA_DE_EDAD;
+        }
+
+        function imprimirSiEsMayorDeEdad(persona) {
+            
+            if (esMayorDeEdad(persona)) {
+                console.log(`${persona.nombre} es mayor de edad.`);
+            } else {
+                console.log(`${persona.nombre} es menor de edad.`);
+            }
+        }
+
+        imprimirSiEsMayorDeEdad(kevs);
+        imprimirSiEsMayorDeEdad(bro);
+        imprimirSiEsMayorDeEdad(juan);
+    </script>
+</body>
+</html>

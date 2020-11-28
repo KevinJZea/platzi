@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 13 - For</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            edad: 21,
+            peso: 72
+        }
+
+        console.log(`Al inicio del año, ${kevs.nombre} pesa ${kevs.peso}kg.`);
+
+        // function aumentarDePeso(persona) {
+            //     return persona.peso += 200;
+            // }
+
+        const INCREMENTO_PESO = 0.2;
+
+        const AUMENTAR_DE_PESO = (persona) => persona.peso += INCREMENTO_PESO;
+
+        const ADELGAZAR = persona => persona.peso -= INCREMENTO_PESO;
+
+        for (var i = 1; i <= 365; i++) {
+            
+            var random = Math.random();
+
+            if (random < 0.25) {
+                AUMENTAR_DE_PESO(kevs);
+            } else if (random < 0.5) {
+                ADELGAZAR(kevs);
+            }         
+        }
+
+        console.log(`Al final del año, ${kevs.nombre} pesa ${kevs.peso.toFixed(1)}kg.`);
+
+        const numMax = 10
+        const numMin = 1
+
+        const numRandom = () => Math.round(Math.random() * (numMax - numMin) + numMin)
+        // redondeamos el decimal que nos devuelve envolviendo todo en Math.round
+
+        numRandom() // 8
+        numRandom() // 5
+        numRandom() // 1
+        numRandom() // 10
+    </script>
+</body>
+</html>

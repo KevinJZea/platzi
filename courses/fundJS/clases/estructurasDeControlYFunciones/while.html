@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 14 - While</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            edad: 21,
+            peso: 72
+        }
+
+        console.log(`Al inicio del año, ${kevs.nombre} pesa ${kevs.peso}kg.`);
+
+        // function aumentarDePeso(persona) {
+        //     return persona.peso += 200;
+        // }
+
+        const INCREMENTO_PESO = 0.3;
+
+        const aumentarDePeso = (persona) => persona.peso += INCREMENTO_PESO;
+
+        const adelgazar = persona => persona.peso -= INCREMENTO_PESO;
+
+        const comeMucho = () => Math.random() < 0.3;
+        const realizaDeporte = () => Math.random() < 0.4;
+
+        const META = kevs.peso - 3;
+        var dias = 0;
+
+        while (kevs.peso > META) {
+            if (comeMucho()) {
+                aumentarDePeso(kevs);
+            }
+            if (realizaDeporte()) {
+                adelgazar(kevs);
+            }
+            dias += 1;
+            console.log(kevs.peso);
+        }
+
+        console.log(`Después de ${dias} días, ${kevs.nombre} bajó 3 kg.`);
+
+    </script>
+</body>
+</html>

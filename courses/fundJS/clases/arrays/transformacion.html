@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 19 - Transformaci&oacute;n de Arrays</title>
+</head>
+<body>
+    <script>
+        var paula = {
+            nombre: 'Paula',
+            apellido: 'Barros',
+            altura: 1.76,
+            cantidadDeLibros: 176
+        };
+
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            altura: 1.70,
+            cantidadDeLibros: 120
+        };
+
+        var bro = {
+            nombre: 'Bro',
+            apellido: 'Zea',
+            altura: 1.70,
+            cantidadDeLibros: 245
+        };
+
+        var jordan = {
+            nombre: 'Michael',
+            apellido: 'Jordan',
+            altura: 1.98,
+            cantidadDeLibros: 94
+        };
+
+        var chofa = {
+            nombre: 'Chofa',
+            apellido: 'Zapata',
+            altura: 1.54,
+            cantidadDeLibros: 132
+        };
+
+        // const esAlta = persona => persona.altura > 1.8;
+        const esAlta = ({ altura }) => altura > 1.8;
+
+        var personas = [kevs, bro, paula, jordan, chofa];
+
+        var personasAltas = personas.filter(esAlta);
+
+        console.log(personasAltas);
+
+        for (var i = 0; i < personas.length; i++) {
+            var persona = personas[i];
+            console.log(`${persona.nombre} mide ${persona.altura} mts.`);   
+        }
+
+        const pasarAlturaACms = (persona) => {
+            return {
+                ...persona,
+                altura: persona.altura * 100
+            }; // Genera un nuevo array con los cambios hechos
+        }
+
+        var personasCms = personas.map(pasarAlturaACms);
+        console.log(personasCms);
+
+        //////////////////////////////////////
+        const pasarAlturaAKms = (persona) => ({
+            ...persona,
+            altura: persona.altura / 1000
+        });
+
+        var personasKms = personas.map(pasarAlturaAKms);
+        console.log(personasKms);
+
+        ////////////////////////////////////////
+
+        // var acumulador = 0;
+
+        // for (var i = 0; i < personas.length; i++) {
+        //     acumulador += personas[i].cantidadDeLibros;
+        // }
+
+        const reducer = (acum, persona) => acum + persona.cantidadDeLibros;
+
+        var totalDeLibros = personas.reduce(reducer, 0);
+
+        console.log(`En total, todos tienen ${totalDeLibros} libros.`);
+
+    </script>
+</body>
+</html>

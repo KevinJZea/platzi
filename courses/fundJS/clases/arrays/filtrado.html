@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 18 - Filtrado de Arrays</title>
+</head>
+<body>
+    <script>
+        var paula = {
+            nombre: 'Paula',
+            apellido: 'Barros',
+            altura: 1.76
+        };
+
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            altura: 1.70
+        };
+
+        var bro = {
+            nombre: 'Bro',
+            apellido: 'Zea',
+            altura: 1.70
+        };
+
+        var jordan = {
+            nombre: 'Michael',
+            apellido: 'Jordan',
+            altura: 1.98
+        };
+
+        var chofa = {
+            nombre: 'Chofa',
+            apellido: 'Zapata',
+            altura: 1.54
+        };
+
+        // const esAlta = persona => persona.altura > 1.8;
+        const esAlta = ({ altura }) => altura > 1.8;
+
+        var personas = [kevs, bro, paula, jordan, chofa];
+
+        var personasAltas = personas.filter(esAlta);
+        // var personasAltas = personas.filter(function (persona) {
+        //     return persona.altura > 1.8;
+        // });
+
+        console.log(personasAltas);
+
+        for (var i = 0; i < personas.length; i++) {
+            var persona = personas[i];
+            console.log(`${persona.nombre} mide ${persona.altura} mts.`);   
+        }
+
+        // const esBaja = ({ altura }) => altura < 1.6;
+        // var personasBajas = personas.filter(esBaja);
+        // console.log(personasBajas);
+        console.log(personas.filter(function ({altura}) {
+            return altura < 1.6;
+        }));
+    </script>
+</body>
+</html>

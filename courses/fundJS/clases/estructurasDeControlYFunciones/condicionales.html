@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 10 - Condicionales</title>
+</head>
+<body>
+    <script>
+        var kevs = {
+            nombre: 'Kevs',
+            apellido: 'Zea',
+            edad: 21,
+            ingeniero: false,
+            estudiante: true,
+            cantante: false,
+            dj: false,
+            guitarrista: false,
+            drone: false,
+            cocinero: false
+        }
+
+        var bro = {
+            nombre: 'Bro',
+            edad: 17
+        }
+
+        function imprimirProfesiones(persona) {
+            console.log(`${persona.nombre} es: `);
+            if (persona.estudiante) {
+                console.log('Estudiante');
+            }
+            if (persona.cocinero) {
+                console.log('Cocinero');
+            }
+            if (persona.dj) {
+                console.log('DJ');
+            }
+            if (persona.cantante) {
+                console.log('Cantante');
+            }
+            if (persona.guitarrista) {
+                console.log('Guitarrista');
+            }
+            if (persona.drone) {
+                console.log('Piloto de rone');
+            }
+        }
+
+        imprimirProfesiones(kevs);
+
+        function imprimirSiEsMayorDeEdad(persona) {
+            var { edad } = persona;
+            if (edad < 18) {
+                console.log(`${persona.nombre} es menor de edad.`);
+            } else {
+                console.log(`${persona.nombre} es mayor de edad.`);
+            }
+        }
+        imprimirSiEsMayorDeEdad(kevs);
+        imprimirSiEsMayorDeEdad(bro);
+
+        // function imprimirSiEsMayorDeEdad(persona) {
+        //     esMayor = persona.edad > 18 ? true : false
+
+        //     if(esMayor) {
+        //         console.log(`${persona.nombre} es mayor de edad`)
+        //     } else {
+        //         console.log(`${persona.nombre} es menor de edad`)
+        //     }
+        // };
+
+    </script>
+</body>
+</html>

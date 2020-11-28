@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 9 - Comparaciones</title>
+</head>
+<body>
+    <script>
+        var x = 4, y = '4';
+
+        var kevs = {
+            nombre: 'Kevs'
+        };
+
+        var otraPersona = kevs;
+
+        // otraPersona == kevs >> True
+        // otraPersona === kevs >> True
+
+        var otraPersona2 = {
+            ...kevs
+        }
+
+        // otraPersona == kevs >> False porque es un objeto diferente
+        // otraPersona === kevs >> False
+
+        var bro = {
+            nombre: 'Bro'
+        };
+
+        // otraPersona == kevs >> False
+        // otraPersona === kevs >> False
+
+    </script>
+</body>
+</html>
