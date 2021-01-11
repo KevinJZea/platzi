@@ -1,2 +1,14 @@
 *.png
 *.pdf
+*.jpg
+*.jpeg
+*.exe
+
+
+# Dependencies
+./courses/reactjs/node_modules
+
+.vscode
+
+prueba.html
+prueba.py

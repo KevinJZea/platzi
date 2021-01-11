@@ -169,13 +169,13 @@
           for (let i = 0; i < this.nivel; i++) {
             let color = this.transformarNumeroAColor(this.secuencia[i]);
 
-            setTimeout(() => this.iluminarColor(color), 1000 * i);
+            setTimeout(() => this.iluminarColor(color), 750 * i);
           }
         }
 
         iluminarColor(color) {
           this.colores[color].classList.add('light');
-          setTimeout(() => this.apagarColor(color), 500);
+          setTimeout(() => this.apagarColor(color), 350);
         }
 
         apagarColor(color) {
@@ -211,7 +211,7 @@
               if (this.nivel === (ULTIMO_NIVEL + 1)) {
                 this.ganoElJuego();
               } else {
-                setTimeout(this.siguienteNivel, 15000);
+                setTimeout(this.siguienteNivel, 1000);
               }
             }
           } else {
