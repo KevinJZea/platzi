@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Side of the Code - Day 3 (12/01/21)</title>
+    <style>
+        * {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+.Main {
+  background-color: #f3f8fb;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.MainGridContainer {
+  padding: 15px;
+  background-color: #eeeeee;
+  width: 60%;
+  min-width: 400px;
+  max-width: 800px;
+  height: auto;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "Large1 Small1 Large2"
+                       "Large1 Small2 Large2"
+                       "Large3 Small3 Large4"
+                       "Large3 Small4 Large4";
+  gap: 15px;
+  box-shadow: 1px 2px 2px rgb(20, 20, 20);
+/*   box-shadow: 1px 2px 4px 0 rgb(21 99 157 / 16%); */
+  justify-items: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.SmallImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.LargeImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.Large1 {
+  background-color: blue;
+  grid-area: Large1;
+  border-radius: 10px;
+}
+
+.Small1 {
+  background-color: aqua;
+  grid-area: Small1;
+  border-radius: 10px;
+}
+
+.Large2 {
+  background-color: pink;
+  grid-area: Large2;
+  border-radius: 10px;
+}
+
+.Large3 {
+  background-color: grey;
+  grid-area: Large3;
+  border-radius: 10px;
+}
+
+.Large4 {
+  background-color: green;
+  grid-area: Large4;
+  border-radius: 10px;
+}
+
+.Small2 {
+  background-color: #F0F0F0;
+  grid-area: Small2;
+  border-radius: 10px;
+}
+
+.Small3 {
+  background-color: #C6C6C6;
+  grid-area: Small3;
+  border-radius: 10px;
+}
+
+.Small4 {
+  background-color: #000000;
+  grid-area: Small4;
+  border-radius: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <main class="Main">
+        <section class="MainGridContainer">
+          <div class="Large1"><img class="LargeImage" src="https://images.freeimages.com/images/small-previews/eed/large-array-1560767.jpg" alt="Large Image" /></div>
+          <div class="Small1"><img class="SmallImage" src="https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/small.jpg" alt="Small Image" /></div>
+          <div class="Small2"><img class="SmallImage" src="https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/small.jpg" alt="Small Image" /></div>
+          <div class="Large2"><img class="LargeImage" src="https://images.freeimages.com/images/small-previews/eed/large-array-1560767.jpg" alt="Large Image" /></div>
+          <div class="Large3"><img class="LargeImage" src="https://images.freeimages.com/images/small-previews/eed/large-array-1560767.jpg" alt="Large Image" /></div>
+          <div class="Small3"><img class="SmallImage" src="https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/small.jpg" alt="Small Image" /></div>
+          <div class="Small4"><img class="SmallImage" src="https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/small.jpg" alt="Small Image" /></div>
+          <div class="Large4"><img class="LargeImage" src="https://images.freeimages.com/images/small-previews/eed/large-array-1560767.jpg" alt="Large Image" /></div>
+        </section>
+      </main>
+</body>
+</html>
