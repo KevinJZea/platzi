@@ -1,0 +1,48 @@
+.Badges__container-container {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 2px 2px 2px 0.5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-areas: "avatar data";
+  gap: 15px;
+}
+
+.Badges__avatar {
+  grid-area: avatar;
+  align-self: center;
+  justify-self: center;
+  border-radius: 100%;
+  width: 80%;
+  max-width: 100px;
+}
+
+.Badges__data-container {
+  grid-area: data;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.Badge__data-name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.Twitter__img {
+  width: 25%;
+  max-width: 25px;
+}
+
+.Badges__data-twitter {
+  color: rgb(29, 118, 185);
+}
+
+.Badge__data-jobTitle {
+  margin: 0;
+}

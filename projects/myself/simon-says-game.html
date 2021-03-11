@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says...</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body id="body">
+    <header class="header">
+        <h1 class="text">Welcome to Simon Says!</h1>
+      <p class="text">The game consists in 5 rounds.<br />Can you complete them all?</p>
+      <button id="btn-darkMode" type="button" onclick="handleDarkMode()" class="btn-darkMode">Light Mode</button>
+    </header>
+    
+    <main class="main">
+      
+      <div class="gameboard">
+        <div id="blue" class="color blue left" data-color="blue"></div>
+        <div id="violet" class="color violet right" data-color="violet"></div>
+        <div id="orange" class="color orange left" data-color="orange"></div>
+        <div id="green" class="color green right" data-color="green"></div>
+        <button id="btnStart" class="btn-start" onclick="startGame()">
+          Start the Game!
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="win" class="text final-message">Congrats! You won!</p>
+      <p id="lost" class="text final-message">You lost... :( I'm sure you can do it. Try again!</p>
+      <address class="address">
+        <ul>
+          <li>
+            <a class="text" href="https://github.com/kevinjzea">Author's GitHub</a>
+          </li>
+          <li>
+            <a class="text" href="https://linkedin.com/in/kevinjzea">Author's LinkedIn</a>
+          </li>
+        </ul>
+      </address>
+    </footer>
+    <script src="./simon.js">
+
+    </script>
+  </body>
+</html>
