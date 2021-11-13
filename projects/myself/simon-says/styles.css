@@ -1,6 +1,6 @@
 :root {
-  --header-size: 17vh;
-  --footer-size: 17vh;
+  --header-size: 22vh;
+  --footer-size: 22vh;
   --light-background: #dedede;
   --light-violet: #e056fd;
   --light-blue: #7ed6df;
@@ -48,7 +48,7 @@ body {
 }
 
 .header p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
   color: white;
 }
@@ -57,11 +57,11 @@ body {
   cursor: pointer;
   padding: 0.5rem 2rem;
   border-radius: 1rem;
+  font-size: 1.5rem;
   background-color: transparent;
   outline: none;
   border: 1px solid white;
   color: white;
-  font-size: 1.5rem;
 }
 
 .btn-darkMode:hover {
@@ -157,6 +157,10 @@ body {
 .footer {
   height: var(--footer-size);
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .final-message {
@@ -168,12 +172,10 @@ body {
 }
 
 .address {
-  height: 100%;
   width: 100%;
 }
 
 .address ul {
-  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -202,6 +204,12 @@ body {
     font-size: 2rem;
   }
 
+  .btn-darkMode {
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+  }
+
   .btn-start {
     width: 300px;
     height: 70px;
@@ -211,7 +219,11 @@ body {
   }
 
   .address ul > li > a {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .final-message {
+    font-size: 1.8rem;
   }
 }
 
@@ -222,6 +234,12 @@ body {
 
   .header p {
     font-size: 2.5rem;
+  }
+
+  .btn-darkMode {
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
   }
 
   .gameboard {
@@ -241,5 +259,9 @@ body {
 
   .address ul > li > a {
     font-size: 2.5rem;
+  }
+
+  .final-message {
+    font-size: 2rem;
   }
 }

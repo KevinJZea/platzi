@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+/* --------- Variables ---------- */
+
+:root {
+  --green-color: #7acc2d;
+  --white-color: #ffffff;
+  --black-color: #313337;
+
+  /* Tipografía */
+  --normal: 12px;
+
+  /* Espaciado */
+  --space: 10px;
+
+  /* Box Shadow */
+  --box: 0 0 2px 1px #e6e5e9;
+}
+
+/* --------- Variables ---------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: var(--normal);
+  font-family: "Open Sans", sans-serif;
+}
+
+p,
+label {
+  font-size: var(--normal);
+}
+
+/* label {
+  padding-bottom: var(--space);
+} */
+
+nav {
+  display: flex;
+  background-color: var(--green-color);
+  padding: var(--space);
+  color: var(--white-color);
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  padding-left: 20px;
+  list-style: none;
+}
+
+nav li a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: var(--white-color);
+}
+
+/* ------- Main Section -------- */
+
+.main_section {
+  padding: 15%;
+  text-align: center;
+}
+
+.products {
+  background-image: url("https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c10/images/curve.png");
+  height: 50px;
+  background-size: cover;
+  background-position: center top;
+  padding: 20%;
+  display: flex;
+}
+
+.product {
+  padding: var(--space);
+  margin-top: -240px;
+}
+
+.product .content {
+  background-color: var(--white-color);
+  padding: 15px;
+  box-shadow: var(--box);
+}
+
+.product h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.product p {
+  text-align: center;
+}
+
+.img_container {
+  text-align: center;
+}
+
+.main_button {
+  background-color: var(--green-color);
+  width: 100%;
+  padding: var(--space);
+  font-size: var(--normal);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.main_button:hover {
+  background-color: #5e9e22;
+}
+
+/* --------- Reto 2 ---------- */
+
+.characteristics {
+  background-color: var(--white-color);
+  height: 300px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.characteristic {
+  max-width: 180px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.characteristic img {
+  height: 150px;
+}
+
+.characteristic h3 {
+  text-align: center;
+}
+
+.characteristic p {
+  text-align: center;
+}
+
+.mentions-container {
+  width: 100%;
+  height: 400px;
+}
+
+.mentions-container h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.mentions {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mention {
+  height: 230px;
+  width: 24%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  box-shadow: var(--box);
+}
+
+.mention img {
+  width: 100%;
+}
+
+.mention_text_container {
+  width: calc(100%-20px);
+  padding: 0 10px;
+}
+
+.mention_text_container h4 {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.mention_text_container q {
+  margin: 0;
+  text-align: center;
+  font-size: var(--normal);
+}
+
+/* ---------- Termina Footer -------- */
+
+/* --------- Form ---------- */
+
+.modulo_pago {
+  background-color: var(--white-color);
+  box-shadow: var(--box);
+  padding: var(--space);
+}
+
+.modulo_pago_images {
+  max-width: 150px;
+  text-align: center;
+  margin: auto;
+}
+
+.modulo_pago form label,
+.modulo_pago form input {
+  display: block;
+  margin-top: var(--space);
+}
+
+.data {
+  width: 100%;
+  padding: 7.5px;
+  border-radius: 2px;
+  border: 1px solid var(--black-color);
+  box-sizing: border-box;
+}
+
+.modulo_pago .main_button {
+  margin-top: 10px;
+}
+
+/* --------- Termina Form ---------- */

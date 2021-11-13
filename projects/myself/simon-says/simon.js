@@ -127,20 +127,50 @@ class Game {
   }
 
   wonGame() {
-    document.getElementById("win").style.display = "block".then(
-      this.initialize
-    );
+    document.getElementById("play-again").style.display = "block";
+
+    this.block("win");
+    this.deleteEventsClick();
+    // then(this.initialize);
   }
 
   lostGame() {
-    document.getElementById("lost").style.display = "block".then(() => {
+    document.getElementById("play-again").style.display = "block";
+    this.block("lost");
+    /*.then(() => {
       this.deleteEventsClick();
       this.initialize();
-    });
+    });*/
+
+    this.deleteEventsClick();
+    // this.initialize();
+
+    // document.getElementById("lost").style.display = "block";
+  }
+
+  block(info) {
+    document.getElementById(info).style.display = "block";
   }
 }
 
 function startGame() {
+  document.getElementById("description").style.display = "none";
+  document.getElementById("instruction").style.display = "block";
+  // document.getElementById("instruction").style.fontSize = "1.8rem";
+
+  let width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  if (width < 400) {
+    document.getElementById("instruction").style.fontSize = "2rem";
+  } else if (400 < width && width < 600) {
+    document.getElementById("instruction").style.fontSize = "2.5rem";
+  } else if (width > 600) {
+    document.getElementById("instruction").style.fontSize = "3.2rem";
+  }
+
   window.game = new Game();
 }
 
@@ -148,6 +178,7 @@ function startGame() {
 
 const body = document.getElementById("body");
 const btnDarkMode = document.getElementById("btn-darkMode");
+const btnPlayAgain = document.getElementById("play-again");
 const text = document.getElementsByClassName("text");
 
 function handleDarkMode() {
@@ -160,6 +191,9 @@ function handleDarkMode() {
     btnStart.style.backgroundColor = "#ffffff";
     btnStart.style.color = "#000000";
     btnStart.style.border = "2px solid #7f8283";
+    btnPlayAgain.style.backgroundColor = "transparent";
+    btnPlayAgain.style.color = "#000";
+    btnPlayAgain.style.border = "1px solid #000";
 
     for (let i = 0; i < text.length; i++) {
       text[i].style.color = "#000";
@@ -173,6 +207,9 @@ function handleDarkMode() {
     btnStart.style.backgroundColor = "#24385b";
     btnStart.style.color = "#ffffff";
     btnStart.style.border = "2px solid #121f3d";
+    btnPlayAgain.style.backgroundColor = "transparent";
+    btnPlayAgain.style.color = "#fff";
+    btnPlayAgain.style.border = "1px solid #fff";
 
     for (let i = 0; i < text.length; i++) {
       text[i].style.color = "#fff";

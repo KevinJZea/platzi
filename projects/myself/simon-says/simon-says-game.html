@@ -9,9 +9,10 @@
 </head>
 <body id="body">
     <header class="header">
-        <h1 class="text">Welcome to Simon Says!</h1>
-      <p class="text">The game consists in 5 rounds.<br />Can you complete them all?</p>
-      <button id="btn-darkMode" type="button" onclick="handleDarkMode()" class="btn-darkMode">Light Mode</button>
+        <h1 class="text">Welcome to Simon Says! 👑</h1>
+        <p id="description" class="text">The game consists of <b>5</b> rounds.<br />Can you complete them all?<br />Just follow the color sequence.</p>
+        <p id="instruction" class="hide text">Follow the color sequence!</p>
+        <button id="btn-darkMode" type="button" onclick="handleDarkMode()" class="btn-darkMode">Light Mode</button>
     </header>
     
     <main class="main">
@@ -28,8 +29,12 @@
     </main>
 
     <footer class="footer">
-      <p id="win" class="text final-message">Congrats! You won!</p>
-      <p id="lost" class="text final-message">You lost... :( I'm sure you can do it. Try again!</p>
+      <!-- <p style="font-size: 16px; color: white;" class="text">Hola</p> -->
+      <p id="win" class="text final-message">Congrats! You won! 🏆<br />Wanna try again?</p>
+
+      <p id="lost" class="text final-message">You lost... 😥<br /> I'm sure you can do it. Try again!</p>
+
+      <button id="play-again" class="hide btn-darkMode" type="button" onclick="location.reload()">Click to Play Again</button>
       <address class="address">
         <ul>
           <li>

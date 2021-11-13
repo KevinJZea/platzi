@@ -4,11 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/mobile.css">
+    <title>Brand</title>
 </head>
 <body>
     
+    <!-- Aquí empieza Navbar -->
+
+    <nav class="fadeInDown">
+        <div class="brand_image">
+            <a href="./index.html">
+                <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c9/images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="nav_options">
+            <!-- <div class="option">FAQs</div>
+            <div class="option">Producto y descripci&oacute;n</div> -->
+
+            <ul>
+                <li><a href="#" title="Preguntas Frecuentes">FAQs</a></li>
+                <li><a href="./product.html" title="Producto y descripci&oacute;n">Producto y descripci&oacute;n</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Aquí termina Navbar -->
+
+    <div class="main_section">
+        <h1 class="fadeIn">
+            &Eacute;ste es un producto incre&iacute;ble.<br />
+            No s&eacute; qu&eacute; haces viendo que lo puedes tener
+        </h1>
+    </div>
+    <div class="products">
+        <div class="product fadeInUp">
+            <div class="content">
+                <div class="img_container">
+                    <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c11/images/box1.png" alt="Box 1">
+                </div>
+                <h2>Producto 1</h2>
+                <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</p>
+                <a href="./venta.html">
+                    <button type="button" class="main_button">
+                        ¡Lo quiero!
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="product fadeInUp">
+            <div class="content">
+                <div class="img_container">
+                    <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c11/images/box2.png" alt="Box 2">
+                </div>
+                <h2>Producto 2</h2>
+                <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</p>
+                <a href="./venta.html">
+                    <button type="button" class="main_button">
+                        ¡Lo quiero!
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Reto 2 - Características y Menciones -->
+
+
+    <section class="characteristics">
+        <article class="characteristic fadeInUp">
+            <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/b1.png" alt="Cute!">
+            <h3>Los m&aacute;s suavecitos</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</p>
+        </article>
+        <article class="characteristic fadeInUp">
+            <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/b2.png" alt="Cute Planet">
+            <h3>Lo m&aacute;s incre&iacute;ble</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</p>
+        </article>
+        <article class="characteristic fadeInUp">
+            <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/b3.png" alt="HOT!">
+            <h3>Lo m&aacute;s confiable</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</p>
+        </article>
+    </section>
+
+    <hr>
+
+    <section class="mentions-container">
+        <h2>Menciones</h2>
+        <section class="mentions">
+            <article class="mention fadeInUp">
+                <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/p1.png" alt="user1">
+                <div class="mention_text_container">
+                    <h4>Mario</h4>
+                    <q>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</q>
+                </div>
+            </article>
+            <article class="mention fadeInUp">
+                <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/p2.png" alt="user2">
+                <div class="mention_text_container">
+                    <h4>Mar&iacute;a</h4>
+                    <q>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</q>
+                </div>
+            </article>
+            <article class="mention fadeInUp">
+                <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/p3.png" alt="user3">
+                <div class="mention_text_container">
+                    <h4>Joe</h4>
+                    <q>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</q>
+                </div>
+            </article>
+            <article class="mention fadeInUp">
+                <img src="https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c13/images/p4.png" alt="user4">
+                <div class="mention_text_container">
+                    <h4>Jamaica</h4>
+                    <q>Miles de productos hay en el mercado, pero nada como una caja con gatitos.</q>
+                </div>
+            </article>
+        </section>
+    </section>
+
+
+    <!-- https://static.platzi.com/media/tmp/class-files/git/Desarrollo_web/Desarrollo_web-c9/images/yay.gif -->
+
     <script src="./scripts/script.js"></script>
 </body>
 </html>
