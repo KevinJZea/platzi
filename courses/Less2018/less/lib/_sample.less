@@ -1,0 +1,23 @@
+.responsive(@size) when (@size <= @breakpoint) {
+  width: 100%;
+}
+.responsive(@size) when (@size > @breakpoint) {
+  width: calc(50% - 12px);
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.article {
+  .responsive(1200px);
+}
+
+a,
+b,
+p,
+td {
+  & + & {
+    font-size: large;
+  }
+}

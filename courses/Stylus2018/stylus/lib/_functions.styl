@@ -1,0 +1,42 @@
+mixin-padding(a, b)
+    a + b
+
+
+box(x, y, margin-only = true)
+    if margin-only
+        margin x y
+    else
+        padding x y
+
+tone(dark = true)
+    if dark
+        color white
+        background-color black
+    else
+        color black
+        background-color white
+
+div
+    tone()
+
+
+
+// Directiva For
+
+gridsize = (1..12)
+
+.grid
+    display flex
+    flex-wrap wrap
+    position relative
+    justify-content flex-start
+    flex-direction row
+
+[class^="grid--item"]
+    flex-shrink 0
+    margin-right 12px
+    flex-grow 1
+
+for i in gridsize
+    .grid--item-{i}
+        width (100 / i) * 1%

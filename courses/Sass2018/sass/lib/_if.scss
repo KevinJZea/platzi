@@ -1,0 +1,11 @@
+/* ------------------------------- *\
+|              $IF
+\* ------------------------------- */
+
+$background: black;
+
+@if $background == black {
+  p {
+    background-color: white;
+  }
+}

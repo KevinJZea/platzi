@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Michis</title>
+    <style>
+      #random-michis,
+      #favorite-michis {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 80px;
+      }
+
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        background-color: rgb(190, 220, 255);
+      }
+
+      .image-container img {
+        border-radius: 16px;
+      }
+
+      .image-container button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        background-color: rgb(90, 255, 255);
+        padding: 12px 16px;
+        border-radius: 16px;
+      }
+
+      .image-container button:hover {
+        background-color: rgb(140, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Michis App</h1>
+
+    <span id="error-span"></span>
+
+    <h2>Random Michis</h2>
+    <section id="random-michis"></section>
+    <button id="new-michis-button" type="button">Load New Michis</button>
+
+    <h2>Favorite Michis</h2>
+    <section id="favorite-michis"></section>
+
+    <script defer src="./index.js"></script>
+  </body>
+</html>

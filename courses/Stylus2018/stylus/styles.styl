@@ -1,0 +1,31 @@
+@import "lib/_variables.styl"
+@import "lib/_mixins.styl"
+@import "lib/_functions.styl"
+
+.jeje
+    height 100px
+    maxWidth()
+
+.pseudoelement
+    width 300px
+    font-size font-size-normal
+    &:before
+        content "Hola"
+    .ie-8 &
+        &:before
+            content "Ciao"
+
+
+body
+.redtext
+    font-family Arial, Helvetica, sans-serif
+
+    > .primerhijo
+        font-size font-size-normal
+
+.btn
+    background-color pink
+    border-radius 2px
+    &--alert
+        background-color red
+

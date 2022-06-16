@@ -1,0 +1,27 @@
+/* ------------------------------- *\
+|             $MAPS
+\* ------------------------------- */
+
+// Font-size
+$fs: (
+  big: 24px,
+  normal: 16px,
+  small: 14px,
+  x-small: 12px,
+);
+
+/* p {
+  font-size: map-get($fs, normal);
+}
+
+small {
+  font-size: map-get($fs, x-small);
+} */
+
+$zindex: (
+  first: 100,
+  second: 120,
+  third: 140,
+  fourth: 160,
+  fifth: 180,
+);

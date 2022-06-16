@@ -1,0 +1,10 @@
+-var titulo = "Título Principal"
+-var subtitulos = ["Subtítulo 1", "Subtítulo 2", "Subtítulo 3"]
+-var usuario = "Kevs"
+-var enlaces = ["Acerca de", "Noticias", "Contacto"]
+mixin caja(imagen, titulo, contenido)
+  .caja
+    .caja__imagen: img(src="https://static.platzi.com/media/tmp/class-files/git/platzi-games-pug-publico/platzi-games-pug-publico-clase-2-interpolacion/images/"+imagen, alt="Imagen")
+    .caja_contenido
+      h3= titulo
+      p= contenido

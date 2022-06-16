@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* ------------------------------- *\
+|             $COLORS 
+\* ------------------------------- */
+/*
+* Branding Colors
+*/
+/*
+* Texture Colors
+*/
+/* ------------------------------- *\
+|             $FONTS 
+\* ------------------------------- */
+/* ------------------------------- *\
+|           $CONSTANTS 
+\* ------------------------------- */
+/* ------------------------------- *\
+|             $MIXINS
+\* ------------------------------- */
+/* ------------------------------- *\
+|             $MAPS
+\* ------------------------------- */
+/* p {
+  font-size: map-get($fs, normal);
+}
+
+small {
+  font-size: map-get($fs, x-small);
+} */
+/* ------------------------------- *\
+|             $LISTS
+\* ------------------------------- */
+/* ------------------------------- *\
+|             $FUNCTIONS
+\* ------------------------------- */
+.modal {
+  z-index: 180;
+}
+
+/* ------------------------------- *\
+|             $EACH
+\* ------------------------------- */
+.normal {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-weight: italic;
+}
+
+/* ------------------------------- *\
+|              $FOR
+\* ------------------------------- */
+.class-1::before {
+  content: "1";
+}
+
+.class-2::before {
+  content: "2";
+}
+
+.class-3::before {
+  content: "3";
+}
+
+.class-4::before {
+  content: "4";
+}
+
+/* ------------------------------- *\
+|              $IF
+\* ------------------------------- */
+p {
+  background-color: white;
+}
+
+/* ------------------------------- *\
+|             $BUTTONS
+\* ------------------------------- */
+.btn {
+  display: inline-block;
+  line-height: 2.5px;
+  color: #fff;
+  background-color: #ea83ee;
+  border-radius: 3px;
+  font-size: 24px;
+}
+.btn__icon {
+  font-size: 0.6em;
+}
+.btn--warning {
+  background-color: #42b8dd;
+}
+
+/* ------------------------------- *\
+|             $LINKS
+\* ------------------------------- */
+/* ------------------------------- *\
+|           $TIPOGRAFIAS
+\* ------------------------------- */
+/* ------------------------------- *\
+|              $GRIDS
+\* ------------------------------- */
+/* ------------------------------- *\
+|             $LAYOUT
+\* ------------------------------- */
+.max-width--huge {
+  background-color: #ea83ee;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  background-color: #bfbfbf;
+  padding: 24px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 800px) {
+  section {
+    background-color: aqua;
+  }
+}
+
+/* ------------------------------- *\
+|            $UTILITIES
+\* ------------------------------- */

@@ -1,0 +1,52 @@
+.article {
+  width: calc(50% - 12px);
+  margin-right: 24px;
+}
+.article:last-child {
+  margin-right: 0;
+}
+a + a,
+a + b,
+a + p,
+a + td,
+b + a,
+b + b,
+b + p,
+b + td,
+p + a,
+p + b,
+p + p,
+p + td,
+td + a,
+td + b,
+td + p,
+td + td {
+  font-size: large;
+}
+div {
+  background-color: #ea83ee;
+  height: 100px;
+}
+.btn {
+  display: inline-block;
+  line-height: 2.2;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ea83ee;
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn--alert {
+  color: #d20000;
+}
+.container {
+  padding: 24px;
+  max-width: 80%;
+  margin: 0 auto;
+}

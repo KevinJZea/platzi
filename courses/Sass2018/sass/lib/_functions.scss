@@ -1,0 +1,15 @@
+/* ------------------------------- *\
+|             $FUNCTIONS
+\* ------------------------------- */
+
+@function suma($numero-uno, $numero-dos) {
+  @return $numero-uno + $numero-dos;
+}
+
+@function set-index($capa) {
+  @return map-get($zindex, $capa);
+}
+
+.modal {
+  z-index: set-index(fifth);
+}

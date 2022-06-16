@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation - Challenge 2</title>
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Compressed JavaScript -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .grid-x,
+      .grid-y {
+        background-color: #76f07a;
+      }
+      div[class^="cell"] {
+        background-color: #3de13d;
+        border: 1px solid rgb(90, 228, 21);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-y grid-margin-y grid-padding-y" style="height: 400px">
+        <div class="cell small-6 medium-auto large-2">Columna 1</div>
+        <div class="cell small-4 medium-auto large-4">Columna 2</div>
+        <div class="cell small-2 medium-auto large-6">Columna 3</div>
+      </div>
+    </div>
+  </body>
+</html>

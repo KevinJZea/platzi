@@ -1,0 +1,15 @@
+extend components/plantilla.pug
+block content
+
+  section.intro
+    .intro__imagen: img(src="https://static.platzi.com/media/tmp/class-files/git/platzi-games-pug-publico/platzi-games-pug-publico-clase-2-interpolacion/images/imagen.png", alt="Imagen")
+    .intro__contenido
+      h2 #{titulo}
+      p
+        | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, quos. Excepturi, tenetur ipsum beatae natus soluta voluptas voluptatem. Eaque culpa nostrum perspiciatis!
+        span Voluptas sunt, veritatis, aperiam alias ipsam itaque architecto ad nulla cumque facere maiores. Laudantium, quo?
+      a.boton Leer m&aacute;s
+
+  main.contenido
+    each subtitulo in subtitulos
+      +caja("imagen.png", subtitulo, "Lorem ipsum dolor sit amet consectetur.")

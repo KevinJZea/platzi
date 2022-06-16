@@ -1,0 +1,17 @@
+/* ------------------------------- *\
+|             $LAYOUT
+\* ------------------------------- */
+
+.max-width--huge {
+  background-color: $color-brand;
+  @include max-width(1200px);
+}
+
+section {
+  background-color: $color-lightgrey;
+  padding: $padding;
+  @include max-width;
+  @include respond-to(800px) {
+    background-color: aqua;
+  }
+}

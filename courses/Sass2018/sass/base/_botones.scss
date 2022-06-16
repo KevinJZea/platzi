@@ -1,0 +1,19 @@
+/* ------------------------------- *\
+|             $BUTTONS
+\* ------------------------------- */
+
+.btn {
+  display: inline-block;
+  line-height: 2.5px;
+  color: $buttoncolor;
+  background-color: $buttonbackgroundcolor;
+  border-radius: $border-radius;
+  font-size: $buttonfontsize;
+
+  &__icon {
+    font-size: 0.6em;
+  }
+  &--warning {
+    background-color: $color-info;
+  }
+}

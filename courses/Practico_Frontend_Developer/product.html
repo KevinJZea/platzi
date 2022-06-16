@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+    />
+    <style>
+      :root {
+        --white: #ffffff;
+        --black: #000000;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+      }
+      body {
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+      }
+      .product-details {
+        width: 360px;
+        padding-bottom: 24px;
+        position: absolute;
+        right: 0;
+      }
+      .product-details-close {
+        background-color: var(--white);
+        cursor: pointer;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        padding: 12px;
+        border-radius: 50%;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+      }
+      .product-details-close:hover {
+        background-color: var(--text-input-field);
+      }
+      .product-details > img:nth-child(2) {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 0 0 20px 20px;
+      }
+      .product-details .product-info {
+        margin: 24px 24px 0;
+      }
+      .product-details .product-info p:nth-child(1) {
+        font-weight: bold;
+        margin: 0 0 4px;
+        font-size: var(--md);
+      }
+      .product-details .product-info p:nth-child(2) {
+        margin: 0 0 36px;
+        font-size: var(--md);
+        color: var(--very-light-pink);
+      }
+      .product-details .product-info p:nth-child(3) {
+        margin: 0 0 36px;
+        font-size: var(--sm);
+        color: var(--very-light-pink);
+      }
+      .primary-button {
+        background-color: var(--hospital-green);
+        border-radius: 8px;
+        border: none;
+        color: var(--white);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: bold;
+        height: 50px;
+      }
+      .primary-button:hover {
+        background-color: #bee6c3;
+      }
+      .add-to-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 640px) {
+        .product-details {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="product-details">
+      <div class="product-details-close">
+        <img
+          src="https://raw.githubusercontent.com/platzi/curso-frontend-developer-practico/4774124de4c723d46d6a22da4c93c03f7be9e7bd/icons/icon_close.png"
+          alt="Close"
+        />
+      </div>
+      <img
+        src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        alt="Bike"
+      />
+
+      <div class="product-info">
+        <p>$35.00</p>
+        <p>Bike</p>
+        <p>
+          With its functional and practical interior, this refirgerator also
+          fullfils a decorative function, adding personality and a retro-vintage
+          aestethic to your kitchen or workplace.
+        </p>
+        <button class="primary-button add-to-cart-button">
+          <img
+            src="https://raw.githubusercontent.com/platzi/curso-frontend-developer-practico/4774124de4c723d46d6a22da4c93c03f7be9e7bd/icons/bt_add_to_cart.svg"
+            alt="Add To Cart"
+          />
+          Add to Cart
+        </button>
+      </div>
+    </aside>
+  </body>
+</html>
