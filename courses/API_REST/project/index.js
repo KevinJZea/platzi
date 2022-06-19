@@ -1,17 +1,17 @@
-const API_KEY = "4e82d29e-0132-46e1-b89a-fc019e471a8a";
-const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=2";
-const API_URL_FAVORITES = "https://api.thecatapi.com/v1/favourites";
+const API_KEY = '4e82d29e-0132-46e1-b89a-fc019e471a8a';
+const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2';
+const API_URL_FAVOURITES = 'https://api.thecatapi.com/v1/favourites';
 
-const randomMichis = document.getElementById("random-michis");
-const favoriteMichis = document.getElementById("favorite-michis");
-const newMichisButton = document.getElementById("new-michis-button");
-const errorSpan = document.getElementById("error-span");
+const randomMichis = document.getElementById('random-michis');
+const favouriteMichis = document.getElementById('favourite-michis');
+const newMichisButton = document.getElementById('new-michis-button');
+const errorSpan = document.getElementById('error-span');
 
 const createElement = (type, properties = {}) => {
   const newElement = document.createElement(type);
   const propertiesArray = Object.entries(properties);
   propertiesArray.forEach(([propertyName, value]) => {
-    if (propertyName === "children") {
+    if (propertyName === 'children') {
       value.forEach((child) => {
         newElement.append(child);
       });
@@ -22,12 +22,38 @@ const createElement = (type, properties = {}) => {
   return newElement;
 };
 
-const getCat = (container, url, api_key) => async () => {
+const createNewImgContainer = (containerId, img) => {
+  return createElement('article', {
+    className: 'image-container',
+    children: [
+      createElement('img', {
+        src: img.url,
+        alt: 'Random cat pic',
+        width: '250',
+      }),
+      containerId === 'random-michis'
+        ? createElement('button', {
+            type: 'button',
+            onclick: () => addToFavourites(img.id, API_URL_FAVOURITES, API_KEY),
+            innerText: 'Add To Favorites',
+          })
+        : containerId === 'favourite-michis' &&
+          createElement('button', {
+            type: 'button',
+            onclick: () => removeFromFavourites(img.id),
+            innerText: 'Remove From Favorites',
+          }),
+    ],
+  });
+};
+
+const getCat = async (container, url, api_key) => {
   try {
     const response = await fetch(
-      `${url}${api_key ? `?api_key=${api_key}` : ""}`
+      `${url}${api_key ? `?api_key=${api_key}` : ''}`
     );
     const data = await response.json();
+    console.log(data);
 
     if (response.status !== 200) {
       errorSpan.innerText = `Hubo un error ${response.status}`;
@@ -38,30 +64,26 @@ const getCat = (container, url, api_key) => async () => {
       return;
     }
 
-    if (container.children.length > 0) {
+    if (container.id === 'random-michis' && container.children.length > 1) {
       data.forEach((img, index) => {
-        [...container.getElementsByTagName("img")][index].src = img.url;
+        [...container.getElementsByTagName('img')][index].src = img.url;
+        [...container.getElementsByTagName('button')][index].onclick = () =>
+          addToFavourites(img.id, API_URL_FAVOURITES, API_KEY);
       });
       return;
     }
 
-    data.forEach((img) => {
-      const newImgContainer = createElement("article", {
-        className: "image-container",
-        children: [
-          createElement("img", {
-            src: img.url,
-            alt: "Random cat pic",
-            width: "250",
-          }),
-          createElement("button", {
-            type: "button",
-            onclick: addToFavorites,
-            innerText: "Add To Favorites",
-          }),
-        ],
-      });
+    if (data.length >= container.children.length) {
+      container.innerHTML = '';
+    }
 
+    data.forEach((img) => {
+      // When getting with api_key, it returns an object with more properties than img.url, img.id, etc.
+      console.log(img);
+      const newImgContainer = createNewImgContainer(
+        container.id,
+        img.image ?? img
+      );
       container.append(newImgContainer);
     });
   } catch (error) {
@@ -69,16 +91,39 @@ const getCat = (container, url, api_key) => async () => {
   }
 };
 
-const addToFavorites = () => {
-  console.log("Added to favorites");
+const removeFromFavourites = async () => {
+  console.log('Removed');
 };
 
-newMichisButton.addEventListener("click", getCat(randomMichis, API_URL_RANDOM));
-document.addEventListener(
-  "DOMContentLoaded",
+const addToFavourites = async (imageId, url, api_key) => {
+  const response = await fetch(
+    `${url}${api_key ? `?api_key=${api_key}` : ''}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        image_id: imageId,
+      }),
+    }
+  );
+
+  const data = await response.json();
+
+  if (response.status !== 200) {
+    errorSpan.innerHTML = 'Hubo un error: ' + response.status + data.message;
+  }
+
+  getCat(favouriteMichis, API_URL_FAVOURITES, API_KEY);
+};
+
+newMichisButton.addEventListener('click', () =>
   getCat(randomMichis, API_URL_RANDOM)
 );
-document.addEventListener(
-  "DOMContentLoaded",
-  getCat(favoriteMichis, API_URL_FAVORITES, API_KEY)
+document.addEventListener('DOMContentLoaded', () =>
+  getCat(randomMichis, API_URL_RANDOM)
+);
+document.addEventListener('DOMContentLoaded', () =>
+  getCat(favouriteMichis, API_URL_FAVOURITES, API_KEY)
 );

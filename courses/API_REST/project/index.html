@@ -7,7 +7,7 @@
     <title>Random Michis</title>
     <style>
       #random-michis,
-      #favorite-michis {
+      #favourite-michis {
         display: grid;
         grid-template-columns: repeat(2, 300px);
         justify-content: center;
@@ -51,11 +51,15 @@
     <span id="error-span"></span>
 
     <h2>Random Michis</h2>
-    <section id="random-michis"></section>
+    <section id="random-michis">
+      <h3>Loading...</h3>
+    </section>
     <button id="new-michis-button" type="button">Load New Michis</button>
 
-    <h2>Favorite Michis</h2>
-    <section id="favorite-michis"></section>
+    <h2>Favourite Michis</h2>
+    <section id="favourite-michis">
+      <h3>Loading...</h3>
+    </section>
 
     <script defer src="./index.js"></script>
   </body>
