@@ -22,25 +22,27 @@ const createElement = (type, properties = {}) => {
   return newElement;
 };
 
-const createNewImgContainer = (containerId, img) => {
+const createNewImgContainer = (containerId, imageUrl, imageId) => {
   return createElement('article', {
     className: 'image-container',
     children: [
       createElement('img', {
-        src: img.url,
+        src: imageUrl,
         alt: 'Random cat pic',
         width: '250',
       }),
       containerId === 'random-michis'
         ? createElement('button', {
             type: 'button',
-            onclick: () => addToFavourites(img.id, API_URL_FAVOURITES, API_KEY),
+            onclick: () =>
+              addToFavourites(imageId, API_URL_FAVOURITES, API_KEY),
             innerText: 'Add To Favorites',
           })
         : containerId === 'favourite-michis' &&
           createElement('button', {
             type: 'button',
-            onclick: () => removeFromFavourites(img.id),
+            onclick: () =>
+              removeFromFavourites(imageId, API_URL_FAVOURITES, API_KEY),
             innerText: 'Remove From Favorites',
           }),
     ],
@@ -53,7 +55,6 @@ const getCat = async (container, url, api_key) => {
       `${url}${api_key ? `?api_key=${api_key}` : ''}`
     );
     const data = await response.json();
-    console.log(data);
 
     if (response.status !== 200) {
       errorSpan.innerText = `Hubo un error ${response.status}`;
@@ -64,25 +65,14 @@ const getCat = async (container, url, api_key) => {
       return;
     }
 
-    if (container.id === 'random-michis' && container.children.length > 1) {
-      data.forEach((img, index) => {
-        [...container.getElementsByTagName('img')][index].src = img.url;
-        [...container.getElementsByTagName('button')][index].onclick = () =>
-          addToFavourites(img.id, API_URL_FAVOURITES, API_KEY);
-      });
-      return;
-    }
-
-    if (data.length >= container.children.length) {
-      container.innerHTML = '';
-    }
+    container.innerHTML = '';
 
     data.forEach((img) => {
       // When getting with api_key, it returns an object with more properties than img.url, img.id, etc.
-      console.log(img);
       const newImgContainer = createNewImgContainer(
         container.id,
-        img.image ?? img
+        img.image?.url ?? img.url,
+        container.id === 'favourite-michis' ? img.id : img.image?.id ?? img.id
       );
       container.append(newImgContainer);
     });
@@ -91,8 +81,21 @@ const getCat = async (container, url, api_key) => {
   }
 };
 
-const removeFromFavourites = async () => {
-  console.log('Removed');
+const removeFromFavourites = async (imageId, url, api_key) => {
+  const response = await fetch(
+    `${url}/${imageId}${api_key ? `?api_key=${api_key}` : ''}`,
+    {
+      method: 'DELETE',
+    }
+  );
+
+  const data = await response.json();
+
+  if (response.status !== 200) {
+    errorSpan.innerHTML = 'Hubo un error: ' + response.status + data.message;
+  }
+
+  getCat(favouriteMichis, API_URL_FAVOURITES, API_KEY);
 };
 
 const addToFavourites = async (imageId, url, api_key) => {
