@@ -31,7 +31,8 @@
         border-radius: 16px;
       }
 
-      .image-container button {
+      .image-container button,
+      .uploading-button {
         cursor: pointer;
         border: none;
         background: none;
@@ -40,7 +41,8 @@
         border-radius: 16px;
       }
 
-      .image-container button:hover {
+      .image-container button:hover,
+      .uploading-button:hover {
         background-color: rgb(140, 255, 255);
       }
     </style>
@@ -55,6 +57,22 @@
       <h3>Loading...</h3>
     </section>
     <button id="new-michis-button" type="button">Load New Michis</button>
+
+    <h2>Sube la foto de tu michi aqu&iacute;</h2>
+    <section id="uploading-michis">
+      <form id="uploading-form">
+        <input id="file" type="file" name="file" onchange="showPreview()" />
+        <button
+          class="uploading-button"
+          type="button"
+          onclick="uploadMichiPhoto()"
+        >
+          Subir foto de michi
+        </button>
+      </form>
+
+      <section id="preview-container"></section>
+    </section>
 
     <h2>Favourite Michis</h2>
     <section id="favourite-michis">
