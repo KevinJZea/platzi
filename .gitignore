@@ -4,6 +4,8 @@
 *.jpeg
 *.exe
 *.svg
+*.csv
+.DS_Store
 
 
 # Dependencies

@@ -1,0 +1,14 @@
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+https://www.google.com.co/
+https://sub.dominio.de.alguien.com/archivo.html
+https://en.wikipedia.org/wiki/.org
+https://cdn-microsoft.org/image/seixo2t9sjl_22.jpg
+https://hola.pizza
+https://platzi.com/clases/1301-expresiones-regulares/11860-urls9102/
+
+https?:\/\/[\-a-zA-Z]*\.[\-a-zA-Z]*(\.[\-a-zA-Z]*)?[\-\/\._a-zA-Z0-9\?=]*$
+https?:\/\/[\-\w]*\.[\-\w]*(\.[\-\w]*)?[\-\/\.\w\?=]*$
+https?:\/\/[\w\-\.]+\.\w{2,5}\/?\S*

@@ -1,0 +1,8 @@
+Ruben
+Juan Pablo
+Marcela
+Rodrigo
+Belen
+Camila
+
+^[A-Z][a-z]{1,}\s?[A-Z]?[a-z]{0,}
