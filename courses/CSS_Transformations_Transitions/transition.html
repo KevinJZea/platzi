@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions</title>
+    <style>
+      .container,
+      .container2 {
+        width: 400px;
+        height: 400px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: space-between;
+        margin: 40px;
+      }
+      .container2 {
+        background-color: #ddd;
+        display: block;
+        height: auto;
+      }
+      .container:hover .box {
+        transform: scale(1.2);
+      }
+      .container2:hover .item {
+        transform: translateX(300px);
+      }
+      .box,
+      .item {
+        width: 100px;
+        height: 100px;
+      }
+      .box1 {
+        background-color: blueviolet;
+        transition: transform 250ms;
+      }
+      .box2 {
+        background-color: lightcoral;
+        transition: transform 500ms;
+      }
+      .box3 {
+        background-color: green;
+        transition: transform 750ms;
+      }
+
+      .item1 {
+        background-color: lightblue;
+        transition: transform 2s ease;
+      }
+      .item2 {
+        background-color: lightcoral;
+        transition: transform 2s ease-in;
+      }
+      .item3 {
+        background-color: lightcyan;
+        transition: transform 2s ease-in-out;
+      }
+      .item4 {
+        background-color: lightgoldenrodyellow;
+        transition: transform 2s ease-out;
+      }
+      .item5 {
+        background-color: lightgreen;
+        transition: transform 2s step-start;
+      }
+      .item6 {
+        background-color: lightpink;
+        transition: transform 2s linear;
+      }
+
+      .bar {
+        margin: 0 auto 100px;
+        height: 300px;
+        width: 50px;
+        background-color: brown;
+        position: relative;
+        transform-origin: top center;
+        animation: pendulum 2s ease-in-out infinite;
+      }
+      .circle {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(calc(-25%)) translateY(25%);
+        background-color: brown;
+      }
+
+      @keyframes pendulum {
+        0% {
+          transform: rotateZ(-80deg);
+        }
+        50% {
+          transform: rotateZ(80deg);
+        }
+        100% {
+          transform: rotateZ(-80deg);
+        }
+      }
+
+      .ball {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: cadetblue;
+        margin-top: 5rem;
+        animation: bounce 1.5s ease-out infinite;
+      }
+      .line {
+        height: 8px;
+        margin-bottom: 5rem;
+        background-color: black;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translateY(0px);
+        }
+        10% {
+          transform: scaleY(0.6) translateY(30px);
+        }
+        20% {
+          transform: scaleY(1) translateY(0px);
+        }
+        50% {
+          transform: translateY(-160px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+    </div>
+    <div class="container2">
+      <div class="item item1"></div>
+      <div class="item item2"></div>
+      <div class="item item3"></div>
+      <div class="item item4"></div>
+      <div class="item item5"></div>
+      <div class="item item6"></div>
+    </div>
+
+    <div class="bar">
+      <div class="circle"></div>
+    </div>
+
+    <div class="ball"></div>
+    <div class="line"></div>
+  </body>
+</html>

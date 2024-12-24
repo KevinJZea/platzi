@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting Time on Navbar</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      nav ul {
+        display: flex;
+        gap: 2rem;
+      }
+      .nav li ul {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        transition: opacity 400ms ease 300ms, visibility 0s 700ms;
+      }
+      .nav li:hover > ul {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 400ms ease 0s, visibility 0s 0s;
+      }
+      nav ul li ul li {
+        position: relative;
+      }
+      nav ul li ul li {
+        right: -80px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Women</a>
+          <ul>
+            <li><a href="/">Shirts</a></li>
+            <li><a href="/">Jeans</a></li>
+            <li>
+              <a href="/">Shorts</a>
+              <ul>
+                <li><a href="/">Seasons</a></li>
+                <li><a href="/">Long</a></li>
+                <li><a href="/">Comfy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/">Men</a></li>
+        <li><a href="/">Kids</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

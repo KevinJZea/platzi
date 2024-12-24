@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .shadow {
+        background-color: lightgray;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+      }
+
+      .circle,
+      .another-circle,
+      .el,
+      .perspective {
+        background: skyblue;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+      .circle:hover {
+        transform: translate(20px, -20px);
+      }
+
+      .another-circle:hover {
+        transform: scale(1.2);
+      }
+
+      .el {
+        border-radius: 20%;
+      }
+      .el1:hover {
+        transform: skew(10deg, 15deg);
+      }
+      .el2:hover {
+        transform: rotate(10deg);
+      }
+
+      .perspective {
+        border-radius: 0;
+        position: relative;
+        padding: 0;
+        perspective: 100px;
+        border: 2px solid black;
+
+        .item {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          transform-style: preserve-3d;
+          transform: rotateX(20deg);
+          border: 2px solid brown;
+        }
+      }
+
+      .backface {
+        transition: all 0.3s ease;
+        padding: 0;
+        background: none;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+      .backface:hover {
+        transform: rotateY(180deg);
+      }
+      .front,
+      .back {
+        border-radius: 20px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+      .front {
+        background-color: aquamarine;
+      }
+      .back {
+        transform: rotateY(180deg);
+        background-color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shadow">
+      <div class="circle">Translate</div>
+    </div>
+
+    <div class="another-circle">Scale</div>
+
+    <div class="el el1">Skew</div>
+
+    <div class="el el2">Rotate</div>
+
+    <div class="el perspective">
+      <div class="item">Perspective</div>
+    </div>
+
+    <div class="el backface">
+      <div class="front">Front</div>
+      <div class="back">Back</div>
+    </div>
+  </body>
+</html>

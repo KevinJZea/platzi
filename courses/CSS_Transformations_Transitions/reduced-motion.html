@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prefers-reduced-motion</title>
+    <style>
+      .card-container {
+        width: min-content;
+      }
+      .card {
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        position: relative;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+      }
+      /* .card:hover {
+      transform: rotateY(180deg);
+    } */
+      .card-container:hover .back {
+        opacity: 1;
+      }
+      .face {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+      .face.front {
+        background: pink;
+      }
+      .face.back {
+        background: papayawhip;
+        /* transform: rotateY(180deg); */
+        transition-duration: 0.6s;
+        z-index: 2;
+        opacity: 0;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .card {
+          transition: transform 0.5s;
+          transform-style: preserve-3d;
+        }
+        .card-container:hover .card {
+          transform: rotateY(180deg);
+        }
+        .face {
+          backface-visibility: hidden;
+        }
+        .back {
+          transform: rotateY(180deg);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card">
+        <div class="face front"></div>
+        <div class="face back"></div>
+      </div>
+    </div>
+  </body>
+</html>
