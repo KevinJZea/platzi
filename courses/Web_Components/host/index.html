@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:host</title>
+    <style>
+      h2 {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Soy un título</h2>
+    <template>
+      <h2>Hola, mundo again</h2>
+      <div><p>Soy más tetxo ejemplo de la clase</p></div>
+    </template>
+    <my-element>
+      <span slot="title"> Hola desde el primer slot 1 </span>
+      <span slot="parrafo"> Hola desde el segundo slot </span>
+    </my-element>
+    <my-element class="blue">
+      <span slot="title"> Hola desde el primer slot 2</span>
+      <span slot="parrafo"> Hola desde el segundo slot </span>
+    </my-element>
+    <my-element yellow>
+      <span slot="title"> Hola desde el primer slot 3</span>
+      <span slot="parrafo"> Hola desde el segundo slot </span>
+    </my-element>
+
+    <article class="card">
+      <my-element>
+        <span slot="title"> Hola desde el primer slot 3</span>
+        <span slot="parrafo"> Hola desde el segundo slot </span>
+      </my-element>
+    </article>
+
+    <script src="./my-element.js"></script>
+  </body>
+</html>
