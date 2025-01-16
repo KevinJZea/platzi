@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contexto Apilamiento</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        height: 100dvh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+      }
+      .phone {
+        position: relative;
+        overflow: hidden;
+        border: 8px solid black;
+        border-radius: 40px;
+        height: 600px;
+        width: 320px;
+        background-color: #ccefff;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      div[class^='layer'] {
+        position: absolute;
+      }
+      .layer-1,
+      .layer-2,
+      .layer-4,
+      .layer-6 {
+        width: 80px;
+        bottom: 0;
+      }
+      .layer-3,
+      .layer-5,
+      .layer-7 {
+        overflow: hidden;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        bottom: 0;
+        background-color: #c27959;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-1 {
+        z-index: 1;
+        right: 60px;
+      }
+      .layer-2 {
+        z-index: 2;
+        left: 60px;
+      }
+      .layer-1,
+      .layer-2 {
+        height: 450px;
+      }
+      .layer-3 {
+        z-index: 3;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 220px;
+        height: 400px;
+      }
+      .layer-4 {
+        z-index: 4;
+        height: 350px;
+        left: 60px;
+      }
+      .layer-5 {
+        z-index: 5;
+        left: 0;
+        width: 200px;
+        height: 300px;
+      }
+      .layer-6 {
+        z-index: 6;
+        height: 250px;
+        right: 60px;
+      }
+      .layer-7 {
+        z-index: 7;
+        width: 200px;
+        height: 200px;
+        right: 0;
+      }
+      .layer-8 {
+        z-index: 8;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 260px;
+        height: 120px;
+        background-color: green;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+      .layer-9 {
+        z-index: 9;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+      .layer-10 {
+        z-index: 10;
+        right: 0;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+
+      /* Bunnies */
+
+      .left-ear--outer,
+      .right-ear--outer {
+        background-color: white;
+        border-radius: 90%;
+        height: 50px;
+        width: 20px;
+        position: absolute;
+      }
+      .left-ear--outer {
+        left: 10px;
+      }
+      .right-ear--outer {
+        right: 10px;
+      }
+      .left-ear--inner,
+      .right-ear--inner {
+        background-color: pink;
+        border-radius: 90%;
+        height: 34px;
+        width: 12px;
+        top: 4px;
+        position: absolute;
+      }
+      .left-ear--inner {
+        left: 14px;
+      }
+      .right-ear--inner {
+        right: 14px;
+      }
+
+      .head {
+        background-color: white;
+        border-radius: 50%;
+        height: 80px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        position: absolute;
+        top: 24px;
+      }
+      .head__eye {
+        background-color: black;
+        width: 4px;
+        height: 8px;
+        border-radius: 50%;
+        position: absolute;
+        top: 14px;
+      }
+      .head__eye--left {
+        left: 28px;
+      }
+      .head__eye--right {
+        right: 28px;
+      }
+
+      .grass {
+        position: absolute;
+        height: 100px;
+        right: 0;
+        left: 0;
+        background: linear-gradient(135deg, #71ac74 25%, transparent 25%),
+          linear-gradient(-135deg, #71ac74 25%, transparent 25%);
+        background-size: 50px 100px;
+      }
+      .soil {
+        position: absolute;
+        height: 100px;
+        top: -51px;
+        right: -25px;
+        left: 0;
+        transform: translateX(-25px);
+        background: linear-gradient(315deg, #ac6043 25%, transparent 25%),
+          linear-gradient(-315deg, #ac6043 25%, transparent 25%);
+        background-size: 50px 100px;
+      }
+      .wheat {
+        position: absolute;
+        height: 100px;
+        top: -38px;
+        right: -25px;
+        left: 0;
+        transform: translateX(-25px);
+        background: linear-gradient(315deg, #c27959 25%, transparent 25%),
+          linear-gradient(-315deg, #c27959 25%, transparent 25%);
+        background-size: 50px 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="phone">
+        <div class="layer-1">
+          <div class="left-ear--outer"></div>
+          <div class="left-ear--inner"></div>
+          <div class="right-ear--outer"></div>
+          <div class="right-ear--inner"></div>
+          <div class="head">
+            <div class="head__eye head__eye--left"></div>
+            <div class="head__eye head__eye--right"></div>
+          </div>
+        </div>
+
+        <div class="layer-2">
+          <div class="left-ear--outer"></div>
+          <div class="left-ear--inner"></div>
+          <div class="right-ear--outer"></div>
+          <div class="right-ear--inner"></div>
+          <div class="head">
+            <div class="head__eye head__eye--left"></div>
+            <div class="head__eye head__eye--right"></div>
+          </div>
+        </div>
+
+        <div class="layer-3">
+          <div class="grass"></div>
+          <div class="soil"></div>
+          <div class="wheat"></div>
+        </div>
+
+        <div class="layer-4">
+          <div class="left-ear--outer"></div>
+          <div class="left-ear--inner"></div>
+          <div class="right-ear--outer"></div>
+          <div class="right-ear--inner"></div>
+          <div class="head">
+            <div class="head__eye head__eye--left"></div>
+            <div class="head__eye head__eye--right"></div>
+          </div>
+        </div>
+
+        <div class="layer-5">
+          <div class="grass"></div>
+          <div class="soil"></div>
+          <div class="wheat"></div>
+        </div>
+
+        <div class="layer-6">
+          <div class="left-ear--outer"></div>
+          <div class="left-ear--inner"></div>
+          <div class="right-ear--outer"></div>
+          <div class="right-ear--inner"></div>
+          <div class="head">
+            <div class="head__eye head__eye--left"></div>
+            <div class="head__eye head__eye--right"></div>
+          </div>
+        </div>
+
+        <div class="layer-7">
+          <div class="grass"></div>
+          <div class="soil"></div>
+          <div class="wheat"></div>
+        </div>
+        <div class="layer-8"></div>
+        <div class="layer-9"></div>
+        <div class="layer-10"></div>
+      </div>
+    </div>
+  </body>
+</html>
