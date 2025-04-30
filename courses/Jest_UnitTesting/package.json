@@ -1,0 +1,19 @@
+{
+  "name": "jest_unittesting",
+  "version": "1.0.0",
+  "description": "Unit testing with Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Unit-testing",
+    "Jest"
+  ],
+  "author": "Kevin J. Zea",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0"
+  }
+}
