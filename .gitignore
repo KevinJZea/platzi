@@ -6,6 +6,9 @@
 *.svg
 *.csv
 .DS_Store
+*.env
+*.mp3
+*.mp4
 
 
 # Dependencies
@@ -15,3 +18,4 @@ node_modules
 
 prueba.html
 prueba.py
+*credentials.json
