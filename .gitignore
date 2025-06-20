@@ -19,3 +19,4 @@ node_modules
 prueba.html
 prueba.py
 *credentials.json
+*db.json
