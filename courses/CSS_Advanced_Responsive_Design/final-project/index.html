@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Advanced - Final Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <nav class="navbar">
+          <div class="logo">
+            <h2>My Portfolio</h2>
+          </div>
+
+          <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <h1>Hi! I'm <span>Kevin J. Zea</span></h1>
+        <p>I create web solutions with the latest technologies</p>
+        <a href="#contact" class="btn-action">Contact Me</a>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://raw.githubusercontent.com/platzi/CSS-advanced/1091d8ad2743521754a6ba127af7d55786a16165/proyecto%20final/assets/e-commerce.jpg"
+                alt="Project 1"
+              />
+            </div>
+            <div class="project-content">
+              <h3>E-commerce</h3>
+              <p>Online Store developed with React & Node.js</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://raw.githubusercontent.com/platzi/CSS-advanced/1091d8ad2743521754a6ba127af7d55786a16165/proyecto%20final/assets/realstate.jpg"
+                alt="Project 2"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Real Estate Web</h3>
+              <p>Responsive Website for a Real Estate Agency</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://raw.githubusercontent.com/platzi/CSS-advanced/1091d8ad2743521754a6ba127af7d55786a16165/proyecto%20final/assets/dashboard.jpg"
+                alt="Project 3"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Finances App</h3>
+              <p>App for personal finances management</p>
+              <div class="project-tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Tailwind</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+          <div class="item-skill">
+            <h3>Frontend</h3>
+            <p>HTML5, CSS3, JavaScript, React</p>
+          </div>
+
+          <div class="item-skill">
+            <h3>Backend</h3>
+            <p>Node.js, Express, Python, Django</p>
+          </div>
+
+          <div class="item-skill">
+            <h3>Databases</h3>
+            <p>MongoDB, MySQL, PostgreSQL</p>
+          </div>
+
+          <div class="item-skill">
+            <h3>Tools</h3>
+            <p>Git, Docker, AWS</p>
+          </div>
+
+          <div class="item-skill">
+            <h3>Design</h3>
+            <p>Figma, Adobe XD, UI/UX</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              class="form-control"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-action">Send message</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="social-links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2025 My Portfolio - Developed with Advanced CSS</p>
+      </footer>
+    </div>
+  </body>
+</html>

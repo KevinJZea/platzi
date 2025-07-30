@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy Loading CSS with JavaScript</title>
+    <link rel="stylesheet" href="critical-styles.css" />
+  </head>
+  <body>
+    <h1>Lazy Loaded Styles</h1>
+    <button id="loadStyles">Load extra styles</button>
+
+    <div id="content" style="margin-top: 20px">No extra styles yet</div>
+
+    <script>
+      document
+        .getElementById('loadStyles')
+        .addEventListener('click', function () {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'non-critical-styles.css';
+
+          document.head.append(link);
+          this.disabled = true;
+        });
+    </script>
+  </body>
+</html>

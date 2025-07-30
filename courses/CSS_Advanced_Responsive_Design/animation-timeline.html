@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation Timeline</title>
+    <style>
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+      .spacer {
+        height: 100dvh;
+      }
+
+      .text {
+        font-size: 2rem;
+        text-align: center;
+
+        view-timeline-name: --appear-timeline;
+        view-timeline-axis: block;
+
+        animation-timeline: --appear-timeline;
+        animation-name: appear;
+
+        animation-range: entry 10% cover 30%;
+
+        animation-fill-mode: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spacer"></div>
+
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+    <p class="text">
+      This text will appear with view-timeline and animation-timeline
+    </p>
+
+    <div class="spacer"></div>
+  </body>
+</html>

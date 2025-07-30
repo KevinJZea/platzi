@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudoclass :not()</title>
+    <style>
+      p:not(.different) {
+        color: blueviolet;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This paragraph I want it to have a specific style.</p>
+    <p class="different">This paragraph I want it to be different.</p>
+    <p>This paragraph I want it to be as the first one.</p>
+  </body>
+</html>

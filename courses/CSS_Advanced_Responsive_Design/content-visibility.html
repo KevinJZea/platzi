@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS content-visibility</title>
+    <style>
+      .item {
+        padding: 20px;
+        margin: 10px 0;
+        border: 1px solid black;
+        font-size: 1.2rem;
+        text-align: center;
+        background-color: aquamarine;
+      }
+
+      .optimized {
+        content-visibility: auto;
+        contain-intrinsic-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      In this example we'll see how to use content-visibility optimization
+    </h1>
+
+    <div class="item">No optimization element</div>
+    <div class="item">No optimization element</div>
+    <div class="item">No optimization element</div>
+    <div class="item">No optimization element</div>
+
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+    <div class="item optimized">
+      This element will be optimized by content-visibility
+    </div>
+  </body>
+</html>

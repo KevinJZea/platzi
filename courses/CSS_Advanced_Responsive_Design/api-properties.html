@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS API Properties</title>
+    <style>
+      @property --bg-color {
+        syntax: '<color>';
+        inherits: false;
+        initial-value: white;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        transition: --bg-color 2s ease-in-out;
+      }
+
+      body:hover {
+        --bg-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hover the element to change its background</h1>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Colors</title>
+    <style>
+      div {
+        color: black;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .oklch {
+        background-color: oklch(0.57 0.1363 311.03);
+      }
+      .oklab {
+        background-color: oklab(67% 0.13 0.068);
+      }
+      .hwb {
+        background-color: hwb(165 6% 46%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="oklch">OKLCH Color</div>
+    <div class="oklab">OKLAB Color</div>
+    <div class="hwb">HWB Color</div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudoclass :has()</title>
+    <style>
+      div:has(p) {
+        border: 2px solid red;
+        padding: 10px;
+        background-color: lightyellow;
+      }
+
+      label:has(input:checked) {
+        color: green;
+        font-weight: bold;
+      }
+
+      table:has(tr) + p {
+        display: block;
+        color: green;
+      }
+      p {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div><p>This DIV has a p</p></div>
+    <div>This DIV has no p</div>
+
+    <br /><br /><br /><br /><br />
+
+    <label for=""><input type="checkbox" name="" id="" />Click me!</label>
+
+    <br /><br /><br /><br /><br />
+
+    <table>
+      <tr>
+        <td>Nombre</td>
+        <td>Apellido</td>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>Pérez</td>
+      </tr>
+    </table>
+
+    <p>This table has data</p>
+
+    <table></table>
+
+    <p>This table has no data</p>
+  </body>
+</html>

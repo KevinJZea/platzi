@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS mix-blend-mode</title>
+    <style>
+      body {
+        background: url('https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg')
+          center/cover;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        width: 300px;
+        padding: 20px;
+        font-size: 2rem;
+        text-align: center;
+        border-radius: 16px;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .plus-lighter {
+        mix-blend-mode: plus-lighter;
+        color: black;
+      }
+
+      .color-burn {
+        mix-blend-mode: color-burn;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card plus-lighter">
+      <p>This text must be emotional because it's part of a card.</p>
+    </div>
+
+    <div class="card color-burn">
+      <p>This text must be emotional because it's part of a card.</p>
+    </div>
+  </body>
+</html>

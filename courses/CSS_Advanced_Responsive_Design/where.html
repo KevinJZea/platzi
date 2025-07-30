@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudoclass :where()</title>
+    <style>
+      :where(.destacado) {
+        color: green;
+      }
+      :is(.destacado) {
+        color: blue;
+      }
+      .destacado {
+        color: red;
+      }
+      section:is(.destacado) {
+        color: blue;
+      }
+      section:where(.destacado) {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="destacado">Esta es una sección destacada</section>
+    <section>Esta es una sección normal</section>
+  </body>
+</html>

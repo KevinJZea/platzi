@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudoclass :is()</title>
+    <style>
+      :is(h1, h2, h3) {
+        color: darkblue;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      :is(article, section, aside) a {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Example of Pseudoclass :is()</h1>
+    <h2>We will save a lot of lines of code</h2>
+    <h3>Advanced CSS Course by me</h3>
+
+    <br /><br /><br /><br /><br />
+
+    <article>
+      <p>Read more about this article in <a href="">this link</a>.</p>
+    </article>
+
+    <section>
+      <p>Read more about this section in <a href="">this link</a>.</p>
+    </section>
+
+    <aside>
+      <p>Read more about this aside in <a href="">this link</a>.</p>
+    </aside>
+
+    <div>
+      <p>Read more about this div in <a href="">this link</a>.</p>
+    </div>
+  </body>
+</html>

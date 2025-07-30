@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deferred CSS</title>
+    <link rel="stylesheet" href="non-deferred-styles.css" />
+    <link
+      rel="stylesheet"
+      href="deferred-styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="deferred-styles.css" /></noscript>
+  </head>
+  <body>
+    <h1>Optimization with Deferred CSS</h1>
+    <h2>Critical styles load first, while the others load later.</h2>
+
+    <div class="extra">
+      This box will have styles once the non-critical CSS is loaded.
+    </div>
+  </body>
+</html>

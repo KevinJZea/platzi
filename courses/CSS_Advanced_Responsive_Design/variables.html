@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <style>
+      :root {
+        --primary-color: blue;
+        --secondary-color: green;
+        --large-size: 2rem;
+        --small-size: 1rem;
+        --font-title: 'Arial', sans-serif;
+        --font-paragraph: 'Georgia', serif;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        font-size: var(--large-size);
+        font-family: var(--font-title);
+      }
+
+      p {
+        color: var(--secondary-color);
+        font-size: var(--small-size);
+        font-family: var(--font-paragraph);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Let's see variables in CSS</h1>
+    <p>They will help us to save a lot of code and effort</p>
+  </body>
+</html>
