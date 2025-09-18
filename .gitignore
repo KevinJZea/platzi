@@ -20,3 +20,6 @@ prueba.html
 prueba.py
 *credentials.json
 *db.json
+
+**/generated/prisma
+**/dist
