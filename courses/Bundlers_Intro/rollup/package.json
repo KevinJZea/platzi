@@ -1,0 +1,22 @@
+{
+  "name": "rollup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "web-dev-server --config web-dev-server.config.js",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rollup/plugin-html": "^2.0.0",
+    "@rollup/plugin-image": "^3.0.3",
+    "@web/dev-server": "^0.4.6",
+    "rollup": "^4.52.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-css-only": "^4.5.5"
+  }
+}
