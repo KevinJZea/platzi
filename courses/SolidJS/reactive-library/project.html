@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+  </head>
+  <body>
+    <input id="first-name-input" type="text" />
+    <input id="last-name-input" type="text" />
+    <input id="date-of-birth-input" type="date" />
+    <input id="twitter-username-input" type="text" />
+
+    <p>
+      Hey! I'm
+      <a id="twitter-link" href="https://twitter.com/">
+        <span id="first-name"></span>
+        <span id="last-name"></span>
+      </a>
+      . I'm
+      <span id="age"></span>
+      years old
+    </p>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "solid": "./solid.js"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import { createEffect, createSignal } from 'solid';
+
+      const BASE_URL = 'https://twitter.com/';
+
+      const [firstName, setFirstName] = createSignal('');
+      const [lastName, setLastName] = createSignal('');
+      const [dateOfBirth, setDateOfBirth] = createSignal('');
+      const [username, setUsername] = createSignal('');
+
+      const $firstNameInput = document.querySelector('#first-name-input');
+      const $lastNameInput = document.querySelector('#last-name-input');
+      const $dateOfBirthInput = document.querySelector('#date-of-birth-input');
+      const $usernameInput = document.querySelector('#twitter-username-input');
+
+      const $firstName = document.querySelector('#first-name');
+      const $lastName = document.querySelector('#last-name');
+      const $age = document.querySelector('#age');
+      const $twitterLink = document.querySelector('#twitter-link');
+
+      $firstNameInput.addEventListener('input', (e) => {
+        setFirstName(e.target.value);
+      });
+
+      $lastNameInput.addEventListener('input', (e) => {
+        setLastName(e.target.value);
+      });
+
+      $dateOfBirthInput.addEventListener('input', (e) => {
+        const date = new Date(e.target.value);
+        const age = (Date.now() - date.getTime()) / 1000 / 60 / 60 / 24 / 365;
+
+        setDateOfBirth(Math.floor(age));
+      });
+
+      $usernameInput.addEventListener('input', (e) => {
+        setUsername(e.target.value);
+      });
+
+      createEffect(() => {
+        $firstName.textContent = firstName();
+      });
+
+      createEffect(() => {
+        $lastName.textContent = lastName();
+      });
+
+      createEffect(() => {
+        $age.textContent = dateOfBirth();
+      });
+
+      createEffect(() => {
+        $twitterLink.href = BASE_URL + username();
+      });
+    </script>
+  </body>
+</html>
