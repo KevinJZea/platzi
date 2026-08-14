@@ -33,3 +33,21 @@ function permutationEquation(p: number[]): number[] {
 
   return p.map((_, i) => p.indexOf(p.indexOf(i + 1) + 1) + 1);
 }
+
+permutationEquation([2, 3, 1]); // [2, 3, 1]
+permutationEquation([4, 3, 5, 1, 2]); // [1, 3, 5, 4, 2]
+
+// AI
+
+function permutationEquation2(p: number[]): number[] {
+  const n = p.length;
+  const inv = new Array<number>(n + 1);
+  for (let i = 0; i < n; i++) {
+    inv[p[i]] = i + 1;
+  }
+  const result: number[] = new Array(n);
+  for (let x = 1; x <= n; x++) {
+    result[x - 1] = inv[inv[x]];
+  }
+  return result;
+}
