@@ -1,4 +1,4 @@
-/* 
+"""
 
 A child is playing a cloud hopping game.
 In this game, there are sequentially numbered clouds that can be thunderheads or cumulus clouds.
@@ -22,40 +22,39 @@ Note: Recall that % refers to the modulo operation.
 In this case, it serves to make the route circular.
 If the character is at c[n - 1] and jumps 1, it will arrive at c[0].
 
-*/
+"""
 
-function jumpingOnClouds(c: number[], k: number): number {
-  let energy = 100;
-  let jump = true;
-  let index = 0;
+def jumpingOnClouds(c, k):
+    energy = 100
 
-  while (jump === true) {
-    energy--;
+    i = 0
+    first_time = True
 
-    if (c[index] === 1) energy -= 2;
+    while True:
+        if i == 0 and first_time is False:
+            break
+        energy -= 1
+        if c[i] == 1:
+            energy -= 2
+        first_time = False
+        i = (i + k) % len(c)
 
-    index = (index + k) % c.length;
-    if (index === 0 && energy !== 100) {
-      jump = false;
-    }
-  }
+    return energy
 
-  return energy;
-}
+jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2); # 92
+jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0], 3); # 80
 
-jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2); // 92
-jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0], 3); // 80
+# AI
 
-// AI
-
-function jumpingOnClouds2(c: number[], k: number): number {
-  const n = c.length;
-  let e = 100;
-  let i = 0;
-  do {
-    i = (i + k) % n;
-    e -= 1;
-    if (c[i] === 1) e -= 2;
-  } while (i !== 0);
-  return e;
-}
+def jumpingOnClouds(c, k):
+    n = len(c)
+    e = 100
+    i = 0
+    while True:
+        i = (i + k) % n
+        e -= 1
+        if c[i] == 1:
+            e -= 2
+        if i == 0:
+            break
+    return e
