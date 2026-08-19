@@ -1,4 +1,4 @@
-/* 
+"""
 
 An integer d is a divisor of an integer n if the remainder of n % d = 0.
 
@@ -15,34 +15,31 @@ Check whether 1, 1, and 1 are divisors of 111. All 3 numbers divide evenly into 
 n = 10
 Check whether 1 and 0 are divisors of 10. 1 is, but 0 is not. Return 1.
 
-*/
+"""
 
-function findDigits(n: number): number {
-  const strN = String(n);
-  let divisors = 0;
+def findDigits(n):
+    strN = str(n)
+    count = 0
+    
+    for num in strN:
+        intNum = int(num)
+        
+        if intNum == 0:
+            continue
+        if n % intNum == 0:
+            count += 1
+    
+    return count
 
-  for (const num of strN.split('')) {
-    const intNum = Number(num);
-    if (n % intNum === 0) divisors++;
-  }
+findDigits(12); # 2
+findDigits(1012); # 3
 
-  return divisors;
-}
+# AI
 
-findDigits(12); // 2
-findDigits(1012); // 3
-
-// AI
-
-function findDigits2(n: number): number {
-  let count = 0;
-  let num = n;
-  while (num > 0) {
-    const digit = num % 10;
-    if (digit !== 0 && n % digit === 0) {
-      count++;
-    }
-    num = Math.floor(num / 10);
-  }
-  return count;
-}
+def find_digits(n: int) -> int:
+    count = 0
+    for ch in str(n):
+        digit = int(ch)
+        if digit != 0 and n % digit == 0:
+            count += 1
+    return count

@@ -42,3 +42,25 @@ function subarrayDivision(s: number[], d: number, m: number): number {
 subarrayDivision([1, 2, 1, 3, 2], 3, 2); // 2
 subarrayDivision([1, 1, 1, 1, 1, 1], 3, 2); // 0
 subarrayDivision([4], 4, 1); // 1
+
+// AI
+
+function birthday(s: number[], d: number, m: number): number {
+  const n = s.length;
+  // No segment of length m can exist if m is invalid or exceeds array length
+  if (m <= 0 || m > n) return 0;
+
+  // Sum of the first window
+  let windowSum = 0;
+  for (let i = 0; i < m; i++) windowSum += s[i];
+
+  let count = windowSum === d ? 1 : 0;
+
+  // Slide: add entering element, remove leaving element
+  for (let i = m; i < n; i++) {
+    windowSum += s[i] - s[i - m];
+    if (windowSum === d) count++;
+  }
+
+  return count;
+}

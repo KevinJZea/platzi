@@ -36,3 +36,23 @@ def subarrayDivision(s, d, m):
 subarrayDivision([1, 2, 1, 3, 2], 3, 2); # 2
 subarrayDivision([1, 1, 1, 1, 1, 1], 3, 2); # 0
 subarrayDivision([4], 4, 1); # 1
+
+# AI
+
+def birthday(s: list[int], d: int, m: int) -> int:
+    n = len(s)
+    # No segment of length m can exist if m is invalid or exceeds array length
+    if m <= 0 or m > n:
+        return 0
+
+    # Sum of the first window
+    window_sum = sum(s[:m])
+    count = 1 if window_sum == d else 0
+
+    # Slide: add entering element, remove leaving element
+    for i in range(m, n):
+        window_sum += s[i] - s[i - m]
+        if window_sum == d:
+            count += 1
+
+    return count
