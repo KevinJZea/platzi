@@ -82,3 +82,16 @@ function appendAndDelete3(s: string, t: string, k: number): 'Yes' | 'No' {
 
   return 'No';
 }
+
+// AI
+
+function appendAndDelete4(s: string, t: string, k: number): string {
+  const m = s.length,
+    n = t.length;
+  let p = 0;
+  while (p < Math.min(m, n) && s[p] === t[p]) p++;
+  const minOps = m - p + (n - p);
+  if (k >= m + n) return 'Yes';
+  if (k >= minOps && (k - minOps) % 2 === 0) return 'Yes';
+  return 'No';
+}
