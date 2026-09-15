@@ -37,3 +37,22 @@ squares(3, 9); // 2
 squares(17, 24); // 0
 squares(35, 70); // 3
 squares(100, 1000); // 22
+
+// AI
+
+function squares2(a: number, b: number): number {
+  // Integer floor sqrt via Math.sqrt with correction for floating-point error
+  const isqrt = (n: number): number => {
+    if (n < 0) return -1;
+    let r = Math.floor(Math.sqrt(n));
+    // Correct potential off-by-one from floating-point imprecision
+    while (r * r > n) r--;
+    while ((r + 1) * (r + 1) <= n) r++;
+    return r;
+  };
+
+  const low = isqrt(a - 1) + 1; // smallest k with k^2 >= a  (ceil of sqrt(a))
+  const high = isqrt(b); // largest k with k^2 <= b   (floor of sqrt(b))
+
+  return Math.max(0, high - low + 1);
+}
