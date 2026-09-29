@@ -39,3 +39,26 @@ function cutTheSticks(arr: number[]): number[] {
 
 cutTheSticks([5, 4, 4, 2, 2, 8]); // [6, 4, 2, 1]
 cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]); // [8, 6, 4, 1]
+
+// AI
+
+function cutTheSticks2(arr: number[]): number[] {
+  if (arr.length === 0) return [];
+
+  // Frequency of each stick length
+  const counts = new Map<number, number>();
+  for (const len of arr) {
+    counts.set(len, (counts.get(len) ?? 0) + 1);
+  }
+
+  // Each distinct length = exactly one iteration; process shortest first
+  const distinctLengths = [...counts.keys()].sort((a, b) => a - b);
+
+  const result: number[] = [];
+  let remaining = arr.length;
+  for (const len of distinctLengths) {
+    result.push(remaining); // sticks left before this cut
+    remaining -= counts.get(len)!; // sticks of this length get discarded
+  }
+  return result;
+}
