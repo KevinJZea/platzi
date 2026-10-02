@@ -40,3 +40,21 @@ function repeatedString(s: string, n: number): number {
 
 repeatedString('aba', 10); // 7
 repeatedString('a', 1000000000000); // 1000000000000
+
+// AI
+
+function repeatedString2(s: string, n: number): number {
+  const L = s.length;
+  const full = Math.floor(n / L);
+  const rem = n % L;
+
+  let totalA = 0,
+    remA = 0;
+  for (let i = 0; i < L; i++) {
+    if (s[i] === 'a') {
+      totalA++;
+      if (i < rem) remA++;
+    }
+  }
+  return full * totalA + remA;
+}
